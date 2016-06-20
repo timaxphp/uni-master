@@ -5,8 +5,9 @@
     min-height: auto!important;
   }
   .section .section{
-    min-height: 780px!important;
+    min-height: 780px;
   }
+  
   .mr-top40{margin-top: 40px;}
   .mr-top115{margin-top: 115px;}
   .section.section_bg1{padding: 9% 0 40px;}
@@ -59,7 +60,7 @@
   .wrapper{height: 100%; width: 100%;}
   .base{height: 100%; width: 100%;}
   div.section{height: 100%; width: 100%;}
-  .section.page-ff{height: 53%;}
+  .section.page-ff{height: 53%!important;}
 }
 
 @media only screen and (min-width: 640px) {
