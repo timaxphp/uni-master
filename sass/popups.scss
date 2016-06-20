@@ -1,0 +1,261 @@
+.popup_form {
+
+  &.popup_form_v1 {
+    background: #fff;
+    border-radius: 0 0 18px 18px;
+    padding: 10px 60px 75px;
+    margin: -1px 0 50px;
+
+    .dialog_g_size_2 & {
+      border-radius: 18px;
+    }
+
+    @include respond-to-max($resp_1) {
+      padding: 10px 40px 45px;
+    }
+
+    @include respond-to-max($resp_2) {
+      padding: 10px 20px 25px;
+
+      .agent_btn {
+        width: 100%;
+        max-width: 290px;
+      }
+    }
+  }
+}
+
+.form_title {
+  margin: 0 auto 42px;
+  max-width: 530px;
+  color: #2d2d2d;
+  font-size: 34px;
+  text-align: center;
+
+  @include respond-to-max($resp_2) {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+}
+
+.form_msg {
+  text-align: center;
+  margin: -10px 0 40px;
+  font: 18px/1.2 $HelveticaNeueCyrLight;
+  color: #262626;
+}
+
+.radio_toggler {
+  @extend %clearfix;
+  position: relative;
+
+  &.radio_toggler_v1 {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    max-width: 710px;
+    border: 1px solid #00a9f1;
+    overflow: hidden;
+    border-radius: 30px;
+    font: 18px/58px $HelveticaNeueCyrThin;
+    letter-spacing: .25px;
+    margin-bottom: 65px;
+
+    .radio_text_off,
+    .radio_text_on {
+      display: block;
+      text-align: center;
+      position: relative;
+
+      @include respond-to-min($resp_2) {
+        float: left;
+        width: 50%;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+      }
+
+      .radio_text {
+        position: relative;
+        z-index: 1;
+        display: block;
+        padding: 0 35px;
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          line-height: 1.2;
+        }
+      }
+    }
+
+    .radio_text_on {
+      z-index: 2;
+
+      .radio_text {
+        border-radius: 30px 30px 0 0;
+        background: #00a9f1;
+        color: #fff;
+
+        @include respond-to-min($resp_2) {
+          margin-right: -15px;
+          border-radius: 30px;
+        }
+      }
+    }
+
+    .radio_text_off {
+
+      .radio_text {
+        border-radius: 0 0 30px 30px;
+        background: #fff;
+        color: #262626;
+
+        @include respond-to-min($resp_2) {
+          margin-left: -15px;
+          border-radius: 30px;
+        }
+      }
+    }
+
+    .hidden_inp:checked ~ {
+      .radio_text_on {
+
+        .radio_text {
+          background: #fff;
+          color: #262626;
+        }
+      }
+
+      .radio_text_off {
+        z-index: 2;
+
+        .radio_text {
+          background: #00a9f1;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+}
+
+.dialog_viewport {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 150;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: rgba(41, 59, 71, 0.4);
+
+  .dialog_regular_open & {
+    display: block;
+  }
+
+}
+
+.pass_reminder {
+  padding-bottom: 40px;
+  font: 12px/1.2 $HelveticaNeueCyrMedium;
+}
+
+.news_img {
+
+  img {
+    max-width: 100%;
+  }
+
+  .news_popup & {
+    position: relative;
+    margin: -10px -60px 30px -60px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(64, 64, 64, 0.7);
+    }
+
+    @include respond-to-max($resp_1) {
+      margin-left: -40px;
+      margin-right: -40px;
+    }
+
+    @include respond-to-max($resp_2) {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+}
+
+.news_popup {
+  .article_v3 {
+    margin: 0 auto;
+    max-width: 650px;
+
+    .more_news {
+      padding-bottom: 0;
+    }
+
+    @include respond-to-min($resp_2) {
+      padding-top: 54px;
+
+      .more_news {
+        margin-top: 115px;
+      }
+    }
+  }
+}
+
+.news_title {
+  @extend %hor_vert_centr;
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  width: 90%;
+  font-family: $HelveticaNeueCyrLight;
+
+  @include respond-to-min($resp_2) {
+    max-width: 510px;
+  }
+}
+
+.news_date {
+  opacity: 0.8;
+  font-size: 16px;
+  margin-bottom: 10px;
+
+  @include respond-to-min($resp_2) {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+.news_name {
+  font-size: 24px;
+  letter-spacing: .6px;
+
+  @include respond-to-min($resp_2) {
+    font-size: 28px;
+  }
+
+  @include respond-to-min($resp_1) {
+    font-size: 34px;
+  }
+}
+
+

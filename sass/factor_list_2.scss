@@ -1,0 +1,360 @@
+$forward_delay: .05s;
+
+.factor_step_list {
+  @extend %clearfix;
+  position: relative;
+  text-align: center;
+  margin-top: 30px;
+  overflow: hidden;
+
+  &:hover {
+    .step_item {
+
+      &:after {
+        height: 20px;
+      }
+
+      .step_index {
+        background: #00d47f;
+      }
+
+      + .step_item {
+        &:after {
+          -webkit-transition-delay: $forward_delay * 2 !important;
+          -moz-transition-delay: $forward_delay * 2 !important;
+          -o-transition-delay: $forward_delay * 2 !important;
+          transition-delay: $forward_delay * 2 !important;
+        }
+
+        .step_index {
+          -webkit-transition-delay: $forward_delay !important;
+          -moz-transition-delay: $forward_delay !important;
+          -o-transition-delay: $forward_delay !important;
+          transition-delay: $forward_delay !important;
+        }
+
+        + .step_item {
+
+          &:after {
+            -webkit-transition-delay: $forward_delay * 3 !important;
+            -moz-transition-delay: $forward_delay * 3 !important;
+            -o-transition-delay: $forward_delay * 3 !important;
+            transition-delay: $forward_delay * 3 !important;
+          }
+
+          .step_index {
+            -webkit-transition-delay: $forward_delay * 2 !important;
+            -moz-transition-delay: $forward_delay * 2 !important;
+            -o-transition-delay: $forward_delay * 2 !important;
+            transition-delay: $forward_delay * 2 !important;
+          }
+
+          + .step_item {
+
+            &:after {
+              -webkit-transition-delay: $forward_delay * 4 !important;
+              -moz-transition-delay: $forward_delay * 4 !important;
+              -o-transition-delay: $forward_delay * 4 !important;
+              transition-delay: $forward_delay * 4 !important;
+            }
+
+            .step_index {
+              -webkit-transition-delay: $forward_delay * 3 !important;
+              -moz-transition-delay: $forward_delay * 3 !important;
+              -o-transition-delay: $forward_delay * 3 !important;
+              transition-delay: $forward_delay * 3 !important;
+            }
+
+            + .step_item {
+
+              &:after {
+                -webkit-transition-delay: $forward_delay * 5 !important;
+                -moz-transition-delay: $forward_delay * 5 !important;
+                -o-transition-delay: $forward_delay * 5 !important;
+                transition-delay: $forward_delay * 5 !important;
+              }
+
+              .step_index {
+                -webkit-transition-delay: $forward_delay * 4 !important;
+                -moz-transition-delay: $forward_delay * 4 !important;
+                -o-transition-delay: $forward_delay * 4 !important;
+                transition-delay: $forward_delay * 4 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-to-min($resp_2) {
+    margin-top: 60px;
+    text-align: left;
+
+    &:hover {
+      .step_item {
+        &:after {
+          width: 100%;
+        }
+
+        + .step_item {
+          &:after {
+            -webkit-transition-delay: $forward_delay !important;
+            -moz-transition-delay: $forward_delay !important;
+            -o-transition-delay: $forward_delay !important;
+            transition-delay: $forward_delay !important;
+          }
+
+          .step_index {
+            -webkit-transition-delay: $forward_delay !important;
+            -moz-transition-delay: $forward_delay !important;
+            -o-transition-delay: $forward_delay !important;
+            transition-delay: $forward_delay !important;
+          }
+
+          + .step_item {
+
+            &:after {
+              -webkit-transition-delay: $forward_delay * 2 !important;
+              -moz-transition-delay: $forward_delay * 2 !important;
+              -o-transition-delay: $forward_delay * 2 !important;
+              transition-delay: $forward_delay * 2 !important;
+            }
+
+            .step_index {
+              -webkit-transition-delay: $forward_delay * 2 !important;
+              -moz-transition-delay: $forward_delay * 2 !important;
+              -o-transition-delay: $forward_delay * 2 !important;
+              transition-delay: $forward_delay * 2 !important;
+            }
+
+            + .step_item {
+
+              &:after {
+                -webkit-transition-delay: $forward_delay * 3 !important;
+                -moz-transition-delay: $forward_delay * 3 !important;
+                -o-transition-delay: $forward_delay * 3 !important;
+                transition-delay: $forward_delay * 3 !important;
+              }
+
+              .step_index {
+                -webkit-transition-delay: $forward_delay * 3 !important;
+                -moz-transition-delay: $forward_delay * 3 !important;
+                -o-transition-delay: $forward_delay * 3 !important;
+                transition-delay: $forward_delay * 3 !important;
+              }
+
+              + .step_item {
+
+                &:after {
+                  -webkit-transition-delay: $forward_delay * 4 !important;
+                  -moz-transition-delay: $forward_delay * 4 !important;
+                  -o-transition-delay: $forward_delay * 4 !important;
+                  transition-delay: $forward_delay * 4 !important;
+                }
+
+                .step_index {
+                  -webkit-transition-delay: $forward_delay * 4 !important;
+                  -moz-transition-delay: $forward_delay * 4 !important;
+                  -o-transition-delay: $forward_delay * 4 !important;
+                  transition-delay: $forward_delay * 4 !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.step_item {
+  position: relative;
+  padding-top: 20px;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    background: rgba(159, 164, 178, .37);
+    left: 50%;
+    top: 0;
+    margin-left: -1px;
+    width: 2px;
+  }
+
+  &:before {
+    height: 20px;
+    z-index: 1;
+  }
+
+  &:after {
+    @include transition_all(height $forward_delay, width $forward_delay);
+    height: 0;
+    background: #00d47f;
+    z-index: 2;
+  }
+
+  p {
+    color: #fff;
+    font: 16px/1.2 $HelveticaNeueCyrThin;
+    letter-spacing: .4px;
+    margin-bottom: 10px;
+  }
+
+  &:hover {
+    .step_index {
+      background: #00d47f;
+    }
+
+    ~ .step_item {
+      .step_index {
+        background: #9fa4b2;
+      }
+
+      &:after {
+        width: 0 ;
+      }
+    }
+  }
+
+  &:first-child {
+    &:after,
+    &:before {
+      display: none !important;
+    }
+  }
+
+  @include respond-to-min($resp_2) {
+    padding-top: 0;
+    float: left;
+    width: 19.5%;
+
+    &:after,
+    &:before {
+      top: 19px;
+      left: 0;
+      height: 2px !important;
+      margin-left: -100%;
+    }
+
+    &:before {
+      width: 100%;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  &:hover {
+    .step_index {
+      background: #00d47f;
+    }
+
+    ~ .step_item {
+      .step_index {
+        background: #9fa4b2;
+      }
+
+      &:after {
+        height: 2px;
+        width: 0;
+      }
+    }
+  }
+
+  + .step_item {
+    &:after {
+      -webkit-transition-delay: $forward_delay * 5 !important;
+      -moz-transition-delay: $forward_delay * 5 !important;
+      -o-transition-delay: $forward_delay * 5 !important;
+      transition-delay: $forward_delay * 5 !important;
+    }
+
+    .step_index {
+      -webkit-transition-delay: $forward_delay * 4 !important;
+      -moz-transition-delay: $forward_delay * 4 !important;
+      -o-transition-delay: $forward_delay * 4 !important;
+      transition-delay: $forward_delay * 4 !important;
+    }
+
+    + .step_item {
+
+      &:after {
+        -webkit-transition-delay: $forward_delay * 4 !important;
+        -moz-transition-delay: $forward_delay * 4 !important;
+        -o-transition-delay: $forward_delay * 4 !important;
+        transition-delay: $forward_delay * 4 !important;
+      }
+
+      .step_index {
+        -webkit-transition-delay: $forward_delay * 3 !important;
+        -moz-transition-delay: $forward_delay * 3 !important;
+        -o-transition-delay: $forward_delay * 3 !important;
+        transition-delay: $forward_delay * 3 !important;
+      }
+
+      + .step_item {
+
+        &:after {
+          -webkit-transition-delay: $forward_delay * 3 !important;
+          -moz-transition-delay: $forward_delay * 3 !important;
+          -o-transition-delay: $forward_delay * 3 !important;
+          transition-delay: $forward_delay * 3 !important;
+        }
+
+        .step_index {
+          -webkit-transition-delay: $forward_delay * 2 !important;
+          -moz-transition-delay: $forward_delay * 2 !important;
+          -o-transition-delay: $forward_delay * 2 !important;
+          transition-delay: $forward_delay * 2 !important;
+        }
+
+        + .step_item {
+
+          &:after {
+            -webkit-transition-delay: $forward_delay * 2 !important;
+            -moz-transition-delay: $forward_delay * 2 !important;
+            -o-transition-delay: $forward_delay * 2 !important;
+            transition-delay: $forward_delay * 2 !important;
+          }
+
+          .step_index {
+            -webkit-transition-delay: $forward_delay !important;
+            -moz-transition-delay: $forward_delay !important;
+            -o-transition-delay: $forward_delay !important;
+            transition-delay: $forward_delay !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.step_index {
+  @include transition_all(background $forward_delay $forward_delay);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 100%;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  color: #fff;
+  background: #9fa4b2;
+  z-index: 5;
+  font: 18px/42px $HelveticaNeueCyrMedium;
+  margin-bottom: 15px;
+
+  .current & {
+    background: #00d47f;
+  }
+
+  @include respond-to-min($resp_2) {
+    margin-bottom: 25px;
+    -webkit-transition: background 0.3s;
+    -ms-transition: background 0.3s;
+    transition: background 0.3s;
+  }
+}

@@ -1,0 +1,75 @@
+$icon-rub: "\e907";
+$icon-ok: "\e905";
+$icon-wrong: "\e906";
+$icon-close: "\e900";
+$icon-fb: "\e901";
+$icon-gp: "\e902";
+$icon-tw: "\e903";
+$icon-vk: "\e904";
+
+[class^="icon-"], [class*=" icon-"], .icon-before {
+  &:before {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'uni_icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+}
+
+.icon-rub {
+  &:before {
+    content: $icon-rub;
+  }
+}
+
+.icon-ok {
+  &:before {
+    content: $icon-ok;
+  }
+}
+
+.icon-wrong {
+  &:before {
+    content: $icon-wrong;
+  }
+}
+
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+
+.icon-fb {
+  &:before {
+    content: $icon-fb;
+  }
+}
+
+.icon-gp {
+  &:before {
+    content: $icon-gp;
+  }
+}
+
+.icon-tw {
+  &:before {
+    content: $icon-tw;
+  }
+}
+
+.icon-vk {
+  &:before {
+    content: $icon-vk;
+  }
+}
+

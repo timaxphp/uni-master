@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="73px" height="65px" viewBox="0 0 73 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+    <title>icon6</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="design" transform="translate(-703.000000, -3893.000000)" stroke="#00ADEE">
+            <g id="Group-16" transform="translate(0.000000, 3623.000000)">
+                <g id="icon6" transform="translate(704.000000, 271.000000)">
+                    <path d="M65.5978261,50.0078829 L65.5978261,57.0322732 C65.5978261,60.4804683 62.8334565,63.2761756 59.423913,63.2761756 L6.17391304,63.2761756 C2.76436957,63.2761756 0,60.4804683 0,57.0322732 L0,19.5688585 C0,16.1206634 2.76436957,13.3249561 6.17391304,13.3249561 L59.423913,13.3249561 C62.8334565,13.3249561 65.5978261,16.1206634 65.5978261,19.5688585 L65.5978261,25.0322732" id="Stroke-1"></path>
+                    <path d="M6.17391304,13.3249561 L49.0664022,0.297053659 C53.0478043,-0.980604878 57.1086957,2.02427317 57.1086957,6.24827317 L57.1086957,7.08105366" id="Stroke-3"></path>
+                    <path d="M71,43.7639805 L62.5108696,43.7639805 C59.1013261,43.7639805 56.3369565,40.9682732 56.3369565,37.520078 L56.3369565,37.520078 C56.3369565,34.0718829 59.1013261,31.2761756 62.5108696,31.2761756 L71,31.2761756 L71,43.7639805 L71,43.7639805 Z" id="Stroke-5"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

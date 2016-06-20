@@ -1,0 +1,281 @@
+
+.order_form {
+
+  &.center_mod {
+
+    @include respond-to-min($resp_1) {
+      display: inline-block;
+      vertical-align: top;
+
+      .form_row.f_cell_v1 {
+        //margin-left: 0;
+      }
+    }
+  }
+
+  &.inline_mod {
+
+    @include respond-to-min($resp_1) {
+      display: inline-block;
+      vertical-align: top;
+
+      .form_row.f_cell_v1 .form_cell {
+        display: inline-block;
+        vertical-align: top;
+        float: none;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.form_row {
+  @extend %clearfix;
+
+  &.f_cell_v1 {
+    margin-left: -10px;
+
+    .form_cell {
+      padding-left: 10px;
+      margin-bottom: 20px;
+
+      @include respond-to-min($resp_1) {
+        float: left;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.f_cell_v2 {
+    margin-left: -20px;
+    margin-bottom: 25px;
+
+    .form_col {
+      padding-left: 20px;
+
+      @include respond-to-min($resp_2) {
+        float: left;
+        width: 50%;
+      }
+    }
+
+    .form_cell {
+      margin-bottom: 19px;
+    }
+  }
+
+  &.f_cell_v3 {
+
+    .form_cell {
+      margin-bottom: 19px;
+    }
+  }
+}
+
+.form_col {
+
+  .f_cell_v1 & {
+    float: left;
+    min-width: 38%;
+    padding-right: 3%;
+
+    .input_w {
+      margin: 10px 0 15px;
+    }
+  }
+
+}
+
+.form_cell {
+
+}
+
+.f_label_v1 {
+  font-family: $HelveticaNeueCyrBold;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 5px;
+  letter-spacing: .75px;
+}
+
+.f_label_v2 {
+  font: 12px/1.2 $HelveticaNeueCyrLight;
+  color: #9faaa9;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 12px;
+  letter-spacing: .9px;
+}
+
+.f_input_v1 {
+  position: relative;
+
+  input {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    height: 60px;
+    padding: 20px;
+    background: #fff;
+    font: 18px/20px $HelveticaNeueCyrLight;
+  }
+
+  .input_bdr_mod & {
+    input {
+      line-height: 18px;
+      border: 1px solid #ccc;
+    }
+  }
+
+  @include respond-to-min($resp_1) {
+    width: 280px;
+  }
+}
+
+.f_input_v2 {
+  position: relative;
+  margin-left: -10px;
+
+  input {
+    @include transition_all(background .3s);
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 4px 10px 0;
+    color: #fff;
+    border-radius: 4px;
+    background: transparent;
+    font: 38px/56px $HelveticaNeueCyrLight;
+
+    &:focus,
+    &:hover {
+      background: #199cd3;
+    }
+  }
+}
+
+%inp_v3 {
+  @include transition_all(border-color .3s);
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  padding: 20px 40px 20px 20px;
+  background: #fff;
+  border: 1px solid #b8c3cf;
+  font: 18px/18px $HelveticaNeueCyrLight;
+
+  &:focus {
+    border-color: #00adee;
+  }
+
+  &.error {
+    border-color: #d0021b;
+  }
+
+  &.success {
+    border-color: #00d47f;
+  }
+
+}
+
+.f_input_v3 {
+  position: relative;
+  @extend .icon-before;
+
+  &:before {
+    @include transition_all(color .3s);
+    position: absolute;
+    right: 14px;
+    font-size: 14px;
+    top: 22px;
+  }
+
+  .error & {
+    &:before {
+      content: $icon-wrong;
+      color: #d0021b;
+    }
+  }
+
+  .success & {
+    &:before {
+      content: $icon-ok;
+      color: #00d47f;
+    }
+  }
+
+  input {
+    @extend %inp_v3;
+    height: 60px;
+  }
+
+  textarea {
+    @extend %inp_v3;
+    height: 166px;
+  }
+
+  @include respond-to-min($resp_1) {
+    //width: 280px;
+  }
+}
+
+.f_input_v4 {
+  position: relative;
+
+  input {
+    @extend %inp_v3;
+    height: 60px;
+    border-radius: 10px;
+  }
+
+  &:focus {
+    border-color: #00adee;
+  }
+
+  &.error {
+    border-color: #d0021b;
+  }
+
+  &.success {
+    border-color: #00d47f;
+  }
+
+}
+
+.check_emul {
+  display: inline-block;
+  vertical-align: top;
+
+  .check_text {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+
+    &:before {
+      @include transition_all(background .3s);
+      content: '';
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background: #0c89b8;
+    }
+
+  }
+
+  .hidden_inp:checked + .check_text {
+    &:before {
+      content: '';
+      position: absolute;
+      background: #fff;
+    }
+  }
+}
+
+.hidden_inp {
+  display: none;
+}

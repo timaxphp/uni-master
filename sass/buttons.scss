@@ -1,0 +1,219 @@
+
+.btn_v1 {
+  height: 48px;
+
+  &.login_btn {
+    display: block;
+    margin-top: -10px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 24px;
+    padding: 14px 37px;
+    font-size: 16px;
+    letter-spacing: -.75px;
+  }
+}
+
+.btn_v2 {
+  height: 60px;
+  text-decoration: none;
+
+  &.slide_btn {
+    display: block;
+    text-decoration: none;
+    border-radius: 30px;
+    font: 20px/58px $HelveticaNeue;
+    padding: 0 22px;
+    letter-spacing: .35px;
+    text-align: center;
+    min-width: 250px;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+    }
+  }
+
+  &.agent_btn {
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    border-radius: 30px;
+    font: 20px/60px $HelveticaNeueCyrMedium;
+    padding: 0 20px;
+    letter-spacing: .35px;
+    text-align: center;
+
+    &.wide_mod {
+      width: 100%;
+      max-width: 290px;
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+    }
+
+    @include respond-to-min($resp_2) {
+      min-width: 290px;
+    }
+  }
+
+  &.get_guarantee_btn {
+    display: block;
+    width: 100%;
+    border-radius: 30px;
+    font: 20px/60px $HelveticaNeueCyrMedium;
+    padding: 0 10px;
+    letter-spacing: .35px;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+    }
+
+    @include respond-to-min($resp_2) {
+      min-width: 290px;
+    }
+
+  }
+
+  &.result_order_btn {
+    border-radius: 30px;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    font: 20px/1 $HelveticaNeueCyrMedium;
+    padding: 20px 5px;
+    letter-spacing: .35px;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+    }
+  }
+}
+
+.white_btn {
+  @include transition_all(background .3s, color .3s);
+  color: #060606;
+  background: #fff;
+
+  &:hover {
+    color: #fff;
+    background: #007dde;
+  }
+}
+
+.white_btn_bdr {
+  @include transition_all(background .3s, border-color .3s);
+  color: #fff;
+  border: 1px solid #fff;
+  line-height: 56px !important;
+
+  &:hover {
+    background: #007dde;
+    border-color: #007dde;
+  }
+
+}
+
+.blue_btn_bdr {
+  @include transition_all(background .3s);
+  color: #494949;
+  background-color: transparent;
+  border: 1px solid #00a9f1;
+
+  &:hover {
+    color: #fff;
+    background: #00a9f1;
+  }
+}
+
+.green_btn_bdr {
+  @include transition_all(background .3s);
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #00d47f;
+
+  &:hover {
+    color: #fff;
+    background: #00d47f;
+  }
+}
+
+.blue_btn_bdr_v2 {
+  @include transition_all(background .3s);
+  color: #00adee;
+  background-color: transparent;
+  border: 1px solid #00adee;
+
+  &:hover {
+    color: #fff;
+    background: #00adee;
+  }
+}
+
+.blue_btn_bdr_v3 {
+  @include transition_all(background .3s);
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #2618ff;
+
+  &:hover {
+    color: #fff;
+    background: #2618ff;
+  }
+}
+
+.blue_btn {
+  @include transition_all(background .3s);
+  background: #00a9f1;
+  color: #fff;
+
+  &:hover {
+    background: #007dde;
+  }
+}
+
+.blue_btn_v2 {
+  @include transition_all(background .3s);
+  background: #2618ff;
+  color: #fff;
+
+  &:hover {
+    background: #4e42ff;
+  }
+}
+
+.green_btn {
+  @include transition_all(background .3s);
+  background: #00e97c;
+  color: #fff;
+
+  &:hover {
+    background: #00adee;
+  }
+
+  &:active {
+    background: #1a72dc;
+  }
+
+}
+
+.green_btn_v2 {
+  @include transition_all(background .3s, color .3s);
+  background: #00e97c;
+  color: #fff;
+
+  &:hover {
+    background: #fff;
+    color: #00e97c;
+  }
+
+}

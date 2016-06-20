@@ -1,0 +1,52 @@
+.leasing_theme {
+
+  .service_benefits {
+    li {
+      &:before {
+        display: none;
+      }
+    }
+
+    @include respond-to-min($resp_1) {
+      margin-top: 210px;
+      text-align: center;
+
+      li {
+        float: none;
+        display: inline-block;
+        vertical-align: top;
+        width: auto;
+        max-width: 32%;
+        min-width: 27%;
+        text-align: left;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .benefit_item {
+    @include respond-to-min($resp_1) {
+      //padding-top: 110px;
+    }
+
+    h3 {
+      margin-bottom: -10px;
+    }
+  }
+
+  .doc_list {
+    @include respond-to-min($resp_1) {
+      margin-top: 150px;
+      min-height: 375px;
+    }
+  }
+
+  .docs_block > ul > li:before {
+    background: #00d47f;
+  }
+
+}
+

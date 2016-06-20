@@ -1,0 +1,116 @@
+.account_theme {
+
+  .service_benefits {
+    li {
+      &:before {
+        border-left: 5px solid #2618ff;
+      }
+    }
+
+    @include respond-to-min($resp_1) {
+      margin-top: 75px;
+      margin-left: -30px;
+      margin-bottom: 120px;
+
+      li {
+        //float: none;
+        //display: inline-block;
+        //vertical-align: top;
+        //width: auto;
+        //max-width: 32%;
+        //min-width: 27%;
+        //text-align: left;
+      }
+    }
+  }
+
+  .benefit_item {
+    padding-top: 0;
+    padding-left: 25px;
+
+    h3 {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 24px;
+    }
+  }
+
+  .doc_list {
+    @include respond-to-min($resp_1) {
+      margin-top: 150px;
+      min-height: 375px;
+    }
+  }
+
+  .docs_block > ul > li:before {
+    background: #00d47f;
+  }
+
+  .news_unit {
+    .gl_link {
+      &:hover {
+        color: #2618ff;
+      }
+    }
+  }
+}
+
+.header_light {
+  .logo_dark {
+    display: none;
+  }
+
+  .logo_white {
+    display: block;
+  }
+
+  .land_switcher:before {
+    border-top: 6px solid #fff;
+  }
+
+  .main_m_btn {
+    border-color: #fff;
+
+    &:before {
+      background: #fff;
+    }
+  }
+
+  &.header_fixed {
+    .logo_dark {
+      display: block;
+    }
+
+    .logo_white {
+      display: none;
+    }
+
+    .clr_white,
+    .callback_block {
+      color: #000;
+    }
+
+    .land_switcher:before {
+      border-top: 6px solid #000;
+    }
+
+    .main_m_btn {
+      border-color: #000;
+
+      &:before {
+        background: #000;
+      }
+    }
+
+    .login_btn {
+      color: #000;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

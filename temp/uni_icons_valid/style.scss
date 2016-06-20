@@ -1,0 +1,63 @@
+@import "variables";
+
+@font-face {
+    font-family: 'uni_icons';
+    src:
+        url('#{$icomoon-font-path}/uni_icons.ttf?5o9hf0') format('truetype'),
+        url('#{$icomoon-font-path}/uni_icons.woff?5o9hf0') format('woff'),
+        url('#{$icomoon-font-path}/uni_icons.svg?5o9hf0#uni_icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'uni_icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ok {
+    &:before {
+        content: $icon-ok;
+    }
+}
+.icon-wrong {
+    &:before {
+        content: $icon-wrong;
+    }
+}
+.icon-close {
+    &:before {
+        content: $icon-close;
+    }
+}
+.icon-fb {
+    &:before {
+        content: $icon-fb;
+    }
+}
+.icon-gp {
+    &:before {
+        content: $icon-gp;
+    }
+}
+.icon-tw {
+    &:before {
+        content: $icon-tw;
+    }
+}
+.icon-vk {
+    &:before {
+        content: $icon-vk;
+    }
+}
+

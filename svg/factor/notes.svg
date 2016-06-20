@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="45px" height="48px" viewBox="0 0 45 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.2 (29753) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="design-with-content" transform="translate(-402.000000, -3744.000000)" stroke="#54D98D">
+            <g id="Group-5" transform="translate(133.000000, 3388.000000)">
+                <g id="Page-1" transform="translate(270.000000, 357.000000)">
+                    <path d="M31.9999,3 C34.2089,3 35.9999,4.791 35.9999,7 L35.9999,42 C35.9999,44.209 34.2089,46 31.9999,46 L3.9999,46 C1.7909,46 -0.0001,44.209 -0.0001,42 L-0.0001,7 C-0.0001,4.791 1.7909,3 3.9999,3 L9.9999,3 L25.9999,3 L31.9999,3 Z" id="Stroke-1"></path>
+                    <polygon id="Stroke-3" points="10 7 26 7 26 0 10 0"></polygon>
+                    <polygon id="Stroke-5" points="17.5441 37.4557 18.2511 31.0917 37.3431 11.9997 43.0001 17.6567 23.9081 36.7487"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

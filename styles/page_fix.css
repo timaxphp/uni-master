@@ -1,0 +1,67 @@
+.section.mr-top0{margin-top: 0!important;}
+
+@media only screen and (min-width: 1200px) {
+  .section .section.section_bg8{
+    min-height: auto!important;
+  }
+  .section .section{
+    min-height: 780px!important;
+  }
+  .mr-top40{margin-top: 40px;}
+  .mr-top115{margin-top: 115px;}
+  .section.section_bg1{padding: 9% 0 40px;}
+  .section.section_bg2{padding: 6% 0 50px;}
+  .section.section_bg3{padding: 7% 0 1px;}
+  .section.section_bg4{padding: 10% 0 35px;}
+  .section.section_bg5{padding: 10% 0 60px;}
+  .section.section_bg6{padding: 10% 0 20px;}
+
+  .section.pd-top-120{padding-top: 120px;}
+  .section.pd-top-150{padding-top: 150px;}
+  .section.pd-top-160{padding-top: 10%;}
+  .section.pd-top-160-60{padding: 160px 0 60px;}
+  .section.pd-top-180{padding-top: 180px;}
+  .factor_theme .service_benefits {
+      margin-top: 30px!important;
+  }
+
+  /* block-article */
+  .block-article h3{margin-bottom: 25px;}
+  .block-article .pp{font-size: 17px; margin-bottom: 15px;}
+  .block-article .arc-list{font-size: 14px;}
+  .block-article .feature_caption{font-size: 18px!important;}
+  .block-article .feature_item p{font-size: 14px;}
+  .block-article .company_features{margin-top: 0;}
+  .company_features.company_features_v2 .feature_caption {min-height: 2em!important;}
+  .block-article .company_features{margin-bottom: 10px;}
+  .company_features li{margin-bottom: 0;}
+
+  /* companyFeatures */
+  .companyFeatures .company_features li{margin-bottom: 20px!important;}
+  .companyFeatures .feature_caption{font-size: 18px!important;}
+  .companyFeatures .feature_item p{font-size: 14px;}
+  .companyFeatures .feature_item{margin-bottom: 0;}
+
+  /* vote */
+  .block-vote{}
+  .question_item p{font-size: 15px;}
+  .block-vote .question_block{padding-top: 20px;}
+  .block-vote .ask_question_controls{margin-top: -10px;}
+  .block-vote .question_item{margin-bottom: 35px;}
+
+ .tarif_list li{
+    width: 40%;
+    max-width: 302px;
+  }
+  .guarantee_form .result_block{margin-top: -80px;}
+
+  /*  -----------  */
+  .wrapper{height: 100%; width: 100%;}
+  .base{height: 100%; width: 100%;}
+  div.section{height: 100%; width: 100%;}
+  .section.page-ff{height: 53%;}
+}
+
+@media only screen and (min-width: 640px) {
+  {width: 90%!important;}
+}

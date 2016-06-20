@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="14px" viewBox="0 0 20 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+    <title>ok</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Agent" transform="translate(-1591.000000, -716.000000)" fill="#00D47F">
+            <path d="M1611,718 C1611,716.896 1610.104,716 1609,716 C1608.447,716 1607.946,716.225 1607.585,716.587 L1599,725.172 L1594.415,720.587 C1594.054,720.225 1593.553,720 1593,720 C1591.896,720 1591,720.896 1591,722 C1591,722.553 1591.225,723.053 1591.587,723.415 L1597.585,729.413 C1597.946,729.775 1598.447,730 1599,730 C1599.553,730 1600.054,729.775 1600.415,729.413 L1610.413,719.415 C1610.775,719.053 1611,718.553 1611,718 L1611,718 Z" id="ok"></path>
+        </g>
+    </g>
+</svg>

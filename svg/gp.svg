@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="20px" viewBox="0 0 30 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+    <title>G+</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="design" transform="translate(-1132.000000, -6731.000000)">
+            <g id="Group-19" transform="translate(0.000000, 6497.000000)">
+                <g id="Group-5" transform="translate(962.000000, 223.000000)">
+                    <g id="G+" opacity="0.6" transform="translate(164.000000, 0.000000)">
+                        <polygon id="container" points="0 0 42 0 42 42 0 42"></polygon>
+                        <path d="M15.75,19.6875 L15.75,22.8375 L20.960625,22.8375 C20.750625,24.189375 19.385625,26.80125 15.75,26.80125 C12.613125,26.80125 10.05375,24.2025 10.05375,21 C10.05375,17.7975 12.613125,15.19875 15.75,15.19875 C17.535,15.19875 18.729375,15.96 19.411875,16.61625 L21.905625,14.214375 C20.304375,12.718125 18.230625,11.8125 15.75,11.8125 C10.670625,11.8125 6.5625,15.920625 6.5625,21 C6.5625,26.079375 10.670625,30.1875 15.75,30.1875 C21.0525,30.1875 24.57,26.46 24.57,21.21 C24.57,20.60625 24.504375,20.146875 24.425625,19.6875 L15.75,19.6875 Z M35.4375,19.6875 L32.8125,19.6875 L32.8125,17.0625 L30.1875,17.0625 L30.1875,19.6875 L27.5625,19.6875 L27.5625,22.3125 L30.1875,22.3125 L30.1875,24.9375 L32.8125,24.9375 L32.8125,22.3125 L35.4375,22.3125 L35.4375,19.6875 Z" id="logo" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

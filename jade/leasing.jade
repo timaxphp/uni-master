@@ -1,0 +1,364 @@
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('UNI leasing', false, false, true)
+
+    body.leasing_theme
+        +header('header_light', false, false, true)
+        .wrapper
+            .base
+                div.main_content
+                    // 
+                    #section_1.section.section_bg16.sectionBS
+                        img.imgBS.hide(src='i/leasing/section_1.jpg')
+                        .section_inner
+                            h3.section_title.text_center
+                                span.clr_green Unileasing 
+                                span.clr_white  —&nbsp;лизинг для малого и&nbsp;среднего бизнеса 
+                            //-.section_sub_title.clr_gray Экспресс-гарантии 44-ФЗ и 223-ФЗ
+                                        
+                            .text_center: .order_form.center_mod
+                                form(action='#')
+                                    .form_row.f_cell_v1
+                                        .form_cell
+                                            .f_input_v1: input(placeholder='Имя')
+
+                                        .form_cell
+                                            .f_input_v1: input(placeholder='Телефон или email')
+                                        .form_cell
+                                            button.btn_v2.get_guarantee_btn.green_btn(): span Оставить заявку
+                                                                        
+                            ul.service_benefits.clr_white
+                                li
+                                    .benefit_item
+                                        +benefit_icon()
+                                        p Не требуется 
+                                            span.dt_only  <br>   
+                                            |  залога
+
+                                li
+                                    .benefit_item
+                                        +benefit_icon()
+                                        p Cнижение налога 
+                                            span.dt_only  <br>   
+                                            | на прибыль и на имущество
+
+                                li
+                                    .benefit_item
+                                        +benefit_icon()
+                                        p Простой выбор 
+                                            span.dt_only  <br>   
+                                            | объектов лизинга
+
+                    // слайдер 
+                    #section_2.section.section_bg17.clr_white
+                        .leasing_slider_w
+                            .section_inner
+                                .leasing_slider_bullets.leasingSliderBullets
+                                    .slide Транспорт
+                                    .slide Спецтехника
+                                    .slide Оборудование
+                                        
+                            .section_inner
+                                .leasing_slider_back.leasingSliderBack
+                                    .slide TRANAPORT
+                                    .slide SPECIAL
+                                    .slide EQUIPMENT
+
+                            .leasing_slider.leasingSlider
+                                +loop_while(3)
+                                    .slide: .section_inner
+                                        .leasing_block
+                                            .leasing_price
+                                                dl.leasing_price_list.clr_white
+                                                    dt до 7 лет
+                                                    dd СРОК
+                                                    
+                                                    dt от 0%
+                                                    dd АВАНС
+                                                    
+                                                    dt от 4%
+                                                    dd УДОРОЖАНИЕ
+                                                    
+                                            .leasing_info
+                                                p Мы финансируем проекты в реальном секторе экономики в целях содействия обновлению, модернизации и расширению основных фондов российских предприятий. Наши специалисты всегда предложат выгодные индивидуальные условия корпоративным клиентам для покупки легкового и коммерческого автотранспорта, грузовых автомобилей, дорожной (строительной и специальной) техники.
+                                                ul.leasing_controls
+                                                    li: a.btn_v2.green_btn_v2.slide_btn(href='#'): span Оставить заявку
+                                                    li: a.btn_v2.white_btn_bdr.slide_btn(href='#'): span Подробнее об условиях
+                            .section_inner: .slider_btn_v2
+                                #leasing_slide_prev.slick-prev.slick-arrow
+                                #leasing_slide_next.slick-next.slick-arrow
+
+                    //документы
+                    #section_3.section.section_bg13.clr_black_2
+                        .section_inner
+                            h3.section_title Необходимые <br>документы
+                            
+                            .doc_list
+                                li 
+                                    .docs_block
+                                        .docs_caption.clr_green ОСНОВНЫЕ
+                                        ul
+                                            li Заявка
+                                            li  Учредительные документы
+                                            li Бухгалтерская отчетность 
+                                            li Паспорт руководителя
+                            
+                                li 
+                                    .docs_block
+                                        .docs_caption.clr_gray_2 ДОПОЛНИТЕЛЬНЫЕ
+                                        ul
+                                            li Выписка со счета
+                                            li Доверенность 
+                                            li Банковские гарантии
+                                            li Страховка
+                                li
+                                    .docs_block
+                                        p Полный список документов вам будет предложен во время заполнения заявки на гарантию
+                    
+                    .section.section_bg15.clr_white
+                        .section_inner
+                            .review_item
+                                p Стать агентом банка это один из наиболее эффективных и надежных способов обеспечения исполнения обязательств, обеспечение заявки на участие в конкурсе, обеспечение исполнения контракта.
+
+                            .author_item
+                                .author_photo
+                                    img(src='i/factor/author_1.png')
+                                .author_name Альберто Жиллардино
+                                .author_post CEO Вимм Билль Данн
+
+                    // в хорошей компании
+                    #section_4.section.section_bg5.clr_gray
+                        .section_inner
+                            h3.section_title Вы в хорошей  
+                                span.dt_only  <br>  
+                                | компании
+                            
+                            ul.company_features
+                                li
+                                    .feature_item
+                                        .feature_icon
+                                            svg(width="78px" height="50px" viewBox="0 0 78 50")
+                                                | <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <g id="design" transform="translate(-149.000000, -3900.000000)" stroke="#00ADEE">
+                                                <g id="Group-16" transform="translate(0.000000, 3623.000000)">
+                                                <polyline id="icon4" points="150 300.018374 176.310422 326.328796 225.639217 277"></polyline>
+                                                </g>
+                                                </g>
+                                                </g>
+                                        
+                                        .feature_caption Надежность банка
+                                        p Нашему банку доверяют 100 000 клиентов по всей России.
+                                        
+                                li
+                                    .feature_item
+                                        .feature_icon
+                                            svg(width="63px" height="64px" viewBox="0 0 63 64")
+                                                | <defs>
+                                                |         <path d="M490.732797,277.381662 C492.056853,274.267513 488.814787,271.032179 485.666227,272.270956 L430.486766,294.022873 C427.307537,295.273619 427.116783,299.839741 430.260854,301.175018 L454.16567,311.332844 L459.368386,333.097477 C460.19349,336.704594 465.363291,337.088346 466.810028,333.683204 L490.732797,277.381662 Z" id="path-1"></path>
+                                                |         <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="63.0368139" height="64.0324799" fill="white">
+                                                |             <use xlink:href="#path-1"></use>
+                                                |         </mask>
+                                                |     </defs>
+                                                |     <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                |         <g id="design" transform="translate(-428.000000, -3895.000000)" stroke="#00ADEE" stroke-width="2">
+                                                |             <g id="Group-16" transform="translate(0.000000, 3623.000000)">
+                                                |                 <use id="icon5" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                                                |             </g>
+                                                |         </g>
+                                                |     </g>
+                                        
+                                        .feature_caption Онлайн сервисы
+                                        p Создаем удобные и быстрые сервисы для работы с банком через интернет.
+                                        
+                                li
+                                    .feature_item
+                                        .feature_icon
+                                            svg(width="73px" height="65px" viewBox="0 0 73 65")
+                                                | <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                                |     <g id="design" transform="translate(-703.000000, -3893.000000)" stroke="#00ADEE">
+                                                |         <g id="Group-16" transform="translate(0.000000, 3623.000000)">
+                                                |             <g id="icon6" transform="translate(704.000000, 271.000000)">
+                                                |                 <path d="M65.5978261,50.0078829 L65.5978261,57.0322732 C65.5978261,60.4804683 62.8334565,63.2761756 59.423913,63.2761756 L6.17391304,63.2761756 C2.76436957,63.2761756 0,60.4804683 0,57.0322732 L0,19.5688585 C0,16.1206634 2.76436957,13.3249561 6.17391304,13.3249561 L59.423913,13.3249561 C62.8334565,13.3249561 65.5978261,16.1206634 65.5978261,19.5688585 L65.5978261,25.0322732" id="Stroke-1"></path>
+                                                |                 <path d="M6.17391304,13.3249561 L49.0664022,0.297053659 C53.0478043,-0.980604878 57.1086957,2.02427317 57.1086957,6.24827317 L57.1086957,7.08105366" id="Stroke-3"></path>
+                                                |                 <path d="M71,43.7639805 L62.5108696,43.7639805 C59.1013261,43.7639805 56.3369565,40.9682732 56.3369565,37.520078 L56.3369565,37.520078 C56.3369565,34.0718829 59.1013261,31.2761756 62.5108696,31.2761756 L71,31.2761756 L71,43.7639805 L71,43.7639805 Z" id="Stroke-5"></path>
+                                                |             </g>
+                                                |         </g>
+                                                |     </g>
+                                                | </g>
+                                        
+                                        .feature_caption Выгодные условия
+                                        p Мы сотрудничем с лучшими банками и компаниями, чтобы предоставлять выгодные тарифы.
+                                        
+                                li
+                                    .feature_item
+                                        .feature_icon
+                                            svg(width="57px" height="66px" viewBox="0 0 57 66")
+                                                | <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                |         <g id="design" transform="translate(-983.000000, -3895.000000)" stroke="#00ADEE">
+                                                |             <g id="Group-16" transform="translate(0.000000, 3623.000000)">
+                                                |                 <g id="icon7" transform="translate(983.000000, 272.000000)">
+                                                |                     <path d="M0.558823529,54.8135593 L0.558823529,28.5254237 C0.558823529,13.0803051 13.0686471,0.559322034 28.5,0.559322034 L28.5,0.559322034 C43.9313529,0.559322034 56.4411765,13.0803051 56.4411765,28.5254237 L56.4411765,54.8135593" id="Stroke-1"></path>
+                                                |                     <path d="M56.4411765,54.2542373 L51.9705882,54.2542373 C49.5017059,54.2542373 47.5,52.2507458 47.5,49.779661 L47.5,40.8305085 C47.5,38.3594237 49.5017059,36.3559322 51.9705882,36.3559322 L56.4411765,36.3559322 L56.4411765,54.2542373 L56.4411765,54.2542373 Z" id="Stroke-3"></path>
+                                                |                     <path d="M5.02941176,54.2542373 L0.558823529,54.2542373 L0.558823529,36.3559322 L5.02941176,36.3559322 C7.49829412,36.3559322 9.5,38.3594237 9.5,40.8305085 L9.5,49.779661 C9.5,52.2507458 7.49829412,54.2542373 5.02941176,54.2542373 L5.02941176,54.2542373 Z" id="Stroke-5"></path>
+                                                |                     <path d="M56.4411765,54.8135593 L56.4411765,54.8135593 C56.4411765,59.4469831 52.6881176,63.2033898 48.0588235,63.2033898 L38,63.2033898" id="Stroke-7"></path>
+                                                |                     <path d="M35.2058824,65.440678 L29.6176471,65.440678 C28.3826471,65.440678 27.3823529,64.4394915 27.3823529,63.2033898 L27.3823529,63.2033898 C27.3823529,61.9672881 28.3826471,60.9661017 29.6176471,60.9661017 L35.2058824,60.9661017 C36.4408824,60.9661017 37.4411765,61.9672881 37.4411765,63.2033898 L37.4411765,63.2033898 C37.4411765,64.4394915 36.4408824,65.440678 35.2058824,65.440678 L35.2058824,65.440678 Z" id="Stroke-9"></path>
+                                                |                 </g>
+                                                |             </g>
+                                                |         </g>
+                                                |     </g>
+                                        
+                                        .feature_caption Поддержка 24/7
+                                        p Решаем вопросы быстро, доступны всегда по телефону 8&nbsp;800&nbsp;333&nbsp;04&nbsp;04
+                                        
+                            .text_center.docs_caption.clr_gray_3 НАДЕЖНЫЕ ПАРТНЕРЫ
+                            ul.partner_list
+                                li
+                                    .partner_item
+                                        .partner_img
+                                            img.retina_only(src='i/garant/logo1@2x.png' width=172 height=47)
+                                            img.no_retina(src='i/garant/logo1.png' width=172 height=47)
+                                        //+partner_1()
+                                        
+                                li
+                                    .partner_item
+                                        .partner_img
+                                            img.retina_only(src='i/garant/logo2@2x.png' width=172 height=47)
+                                            img.no_retina(src='i/garant/logo2.png' width=172 height=47)
+                                        //+partner_2()
+                                        
+                                li
+                                    .partner_item
+                                        .partner_img
+                                            img.retina_only(src='i/garant/logo3@2x.png' width=155 height=41)
+                                            img.no_retina(src='i/garant/logo3.png' width=155 height=41)
+                                        //+partner_3()
+                                        
+                                li
+                                    .partner_item
+                                        .partner_img
+                                            img.retina_only(src='i/garant/logo4@2x.png' width=158 height=46)
+                                            img.no_retina(src='i/garant/logo4.png' width=158 height=46)
+                                        //+partner_4()
+                                        
+                    .section.section_bg15.clr_white
+                        .section_inner
+                            .review_item
+                                p Стать агентом банка это один из наиболее эффективных и надежных способов обеспечения исполнения обязательств, обеспечение заявки на участие в конкурсе, обеспечение исполнения контракта.
+
+                            .author_item
+                                .author_photo
+                                    img(src='i/factor/author_1.png')
+                                .author_name Альберто Жиллардино
+                                .author_post CEO Вимм Билль Данн
+                    
+                    // Агентам
+                    #section_5.section.section_bg18.clr_gray.sectionBS
+                        img.imgBS.hide(src='i/leasing/section_2.jpg')
+                        .section_inner
+                            .create_agent_block
+                                h3.section_title Интересно сотрудничество в&nbsp;качестве агента? Заполните анкету или позвоните нам
+                                .create_agent_controls
+                                    a.btn_v2.green_btn.agent_btn.agentFormOpen(href='#'): span Стать агентом
+                                                                                    
+                                            
+                    // Новости
+                    #section_6.section.section_bg19.clr_black_2
+                        .section_inner: .news_block
+                            h3.section_title Новости
+                            
+                            ul.news_list
+                                +loop_while(3)
+                                    li
+                                        .news_unit
+                                            a.news_img.openNewsPopup(href='#')
+                                                img(src='i/factor/news_1.jpg')
+                                                
+                                            .news_inner
+                                                a.clr_green.gl_link.openNewsPopup(href='#') «Юниаструм Банк» вошел в топ-30 по прибыли по итогам 1 квартала 2016 года
+                                            
+                            .more_news
+                                a.gl_link(href='#') Больше новостей
+
+                    #section_7.section.section_bg8.clr_gray.sectionBS
+                        img.imgBS.hide(src='i/leasing/section_3.jpg')
+                        .section_inner
+                            h3.section_title.text_center.clr_white
+                                | Получите лизинг
+                            .text_center: .order_form.center_mod
+                                form(action='#')
+                                    .form_row.f_cell_v1
+                                        .form_cell
+                                            .f_input_v1: input(placeholder='Имя')
+
+                                        .form_cell
+                                            .f_input_v1: input(placeholder='Телефон или email')
+                                        .form_cell
+                                            button.btn_v2.get_guarantee_btn.green_btn(): span Получить гарантию  
+                                
+                .footer
+                    .section_inner
+                        .footer_row
+                            .fl
+                                .callback_block.clr_white
+                                    .callback_phone 8 800 333 04 04
+                                    p
+                                        span Звоните или 
+                                        a.gl_link.callbakc_link.clr_white.openCallBackForm(href='#') закажите звонок
+                            .fr
+                                .footer_menu
+                                    li: a.gl_link(href='#') О продукте
+                                    li: a.gl_link(href='#') Калькулятор
+                                    li: a.gl_link.openCallBackCompleteForm(href='#') Отзывы
+                                    li: a.gl_link.restoreCompliteFormOpen(href='#') Оформление
+                                    li: a.gl_link.restoreFormOpen(href='#') Контакты
+                        .footer_row
+                            .footer_box
+                                p.clr_gray_4 Есть вопросы?
+                                p 
+                                    a.gl_link.clr_white(href='mailto:hello@unitender.com') hello@unitender.com
+    
+                            .footer_box
+                                p.clr_gray_4 Приходите в гости
+                                p.clr_white Московская обл., 8-ой км Рублево-Успенского шоссе,  <br> Одинцовский р-н, д. Барвиха, д. 114
+    
+                            ul.footer_soc
+                                li: a.soc_link.icon-fb(href='#')
+                                li: a.soc_link.icon-tw(href='#')
+                                li: a.soc_link.icon-gp(href='#')
+                                li: a.soc_link.icon-vk(href='#')
+
+        .aside_menu_holder
+            a.aside_close_btn.openAsideMenu(href='#')
+
+            .aside_menu_inner
+                ul#navigation.aside_menu
+                    li: a.aside_m_link(href='#section_1') Контроль
+                    li: a.aside_m_link(href='#section_2') Лизинг
+                    li: a.aside_m_link(href='#section_3') Документы
+                    li: a.aside_m_link(href='#section_4') Партнеры
+                    li: a.aside_m_link(href='#section_5') Агентам
+                    li: a.aside_m_link(href='#section_6') Новости
+                    li: a.aside_m_link(href='#section_7') Контакты
+                
+                .aside_info
+                    .aside_company 
+                        span.clr_green UNIASTRUM 
+                        span BANK
+                    
+                    dl.aside_address
+                        dt МОСКВА
+                        dd
+                            | 80 Franklin Street, Suite 1  <br> 
+                            | New York, NY 10013, USA  <br> 
+                            b 8 800 333 04 04
+                            
+                        dt САНКТ-ПЕТЕРБУРГ
+                        dd
+                            | 80 Franklin Street, Suite 1  <br> 
+                            | New York, NY 10013, USA  <br> 
+                            b 8 800 333 04 04
+                            
+        .dialog_viewport.ui-widget-overlay
+            +popups()
+            

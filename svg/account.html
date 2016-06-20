@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>UNI account</title><!-- saved from url=(0014)about:internet -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="styles/main_global.css" media="all"/>
+    <link rel="stylesheet" href="styles/page_fix.css" media="all"/>
+    <link rel="stylesheet" href="styles/onepage-scroll.css" media="all"/>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="ico_ac/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="ico_ac/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="ico_ac/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="ico_ac/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="ico_ac/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="ico_ac/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="ico_ac/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="ico_ac/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="ico_ac/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico_ac/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="ico_ac/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="ico_ac/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="ico_ac/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="ico_ac/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="ico_ac/favicon-32x32.png" sizes="32x32">
+    <link rel="manifest" href="ico_ac/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="mstile-144x144.png">
+    <meta name="msapplication-config" content="ico_ac/browserconfig.xml">
+    <script src="js/jquery1.10.js"></script>
+    <script src="js/jquery-ui-1.10.2.custom.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/jquery.inputmask.bundle.min.js"></script>
+    <!-- <script src="js/skrollr.js"></script>-->
+    <!--script(src='js/inputmask.js')-->
+    <!--script(src='js/inputmask.extensions.js')-->
+    <!--script(src='js/jquery.inputmask.js')-->
+    <!--script(src='js/jquery.inputmask.regex.extensions.js')-->
+    <!--script(src='js/jquery.inputmask.extensions.js')-->
+    <script src="js/plax.js"></script>
+    <script src="js/jquery.nav.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/jquery.validationEngine.js"></script>
+    <script src="js/jquery.validationEngine-ru.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/nouislider.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/factor.js"></script>
+    <script src="js/jquery.onepage-scroll.js"></script>
+    <script>
+  	  $(document).ready(function(){
+        var hash = window.location.hash;
+        $("#navigation a[href='" + hash  + "']").parent().addClass('active');
+        $(".main_content").onepage_scroll({
+          sectionContainer: "section",
+          animationTime: 800,
+          easing: "ease",
+          loop: false,
+          updateURL: true,
+          beforeMove: function(index) {
+            $('#navigation li.active').each(function(index) {
+              $(this).removeClass('active');
+            });
+            $("#navigation a[href='#" + index + "']").parent().addClass('active');
+
+            if (index > 1) {
+              $('.header.true, .header.header_light').addClass('header_fixed');
+            }
+          },
+          afterMove: function(index) {
+            if (index == 1) {
+              $('.header.true.header_fixed, .header.header_light.header_fixed').removeClass('header_fixed');
+            }
+          }
+        });
+  		});
+  	</script>
+  <body class="account_theme">
+
+    <div id="auth_form" style="display:none;" class="popup_form popup_form_v1 popup_form_v1_mod_1 color_white_3">
+      <form action="#" class="validateMe">
+        <div class="form_title">Вход</div>
+        <div class="form_row f_cell_v3">
+          <div class="form_cell">
+            <div class="f_input_v4">
+              <input id="agent_org_form" data-inputmask="'alias': 'email'" placeholder="EMAIL" class="maskMe validate[required,custom[email]]"/>
+            </div>
+          </div>
+          <div class="form_cell">
+            <div class="f_input_v4">
+              <input id="agent_org_form" type="password" placeholder="ПАРОЛЬ" class="validate[required]"/>
+            </div>
+          </div>
+        </div>
+        <div class="pass_reminder"><a href="#" class="gl_link text_upper clr_blue">ЗАБЫЛИ ПАРОЛЬ?</a></div>
+        <div class="text_center">
+          <button class="btn_v2 green_btn agent_btn wide_mod"><span>Войти</span></button>
+        </div>
+      </form>
+    </div>
+
+    <div id="restore_form" style="display:none;" class="popup_form popup_form_v1 popup_form_v1_mod_1 color_white_3">
+      <form action="#" class="validateMe">
+        <div class="form_title">Восстановление пароля</div>
+        <div class="form_row f_cell_v3">
+          <div class="form_cell">
+            <div class="f_input_v4">
+              <input id="agent_org_form" data-inputmask="'alias': 'email'" placeholder="EMAIL" class="maskMe validate[required,custom[email]]"/>
+            </div>
+          </div>
+        </div>
+        <div class="pass_reminder"></div>
+        <div class="text_center pass_reminder">
+          <button class="btn_v2 green_btn agent_btn"><span>Восстановить пароль</span></button>
+        </div>
+        <div class="text_center"><a href="#" class="gl_link text_upper clr_blue">ПОМНЮ ПАРОЛЬ</a></div>
+      </form>
+    </div>
+
+    <div id="restore_complete_form" style="display:none;" class="popup_form popup_form_v1 popup_form_v1_mod_1 color_white_3">
+      <div class="form_title">Восстановление пароля</div>
+      <div class="form_msg">На ваш электронный адрес отправлено письмо с инструкцией по восстановление пароля</div>
+      <div class="text_center"><a href="#" class="btn_v2 agent_btn blue_btn_bdr_v2"><span>Закрыть</span></a></div>
+    </div>
+
+    <div id="callback_form" style="display:none;" class="popup_form popup_form_v1 popup_form_v1_mod_1 color_white_3">
+      <form action="#" class="validateMe">
+        <div class="form_title">Телефон для связи</div>
+        <div class="form_row f_cell_v3">
+          <div class="form_cell">
+            <div class="f_input_v4">
+              <input id="agent_org_form" data-inputmask="'mask': '[+7] (999)-999-99-99'" class="maskMe validate[required]"/>
+            </div>
+          </div>
+        </div>
+        <div class="pass_reminder"></div>
+        <div class="text_center">
+          <button class="btn_v2 green_btn agent_btn"><span>Позвоните мне</span></button>
+        </div>
+      </form>
+    </div>
+
+    <div id="callback_complete_form" style="display:none;" class="popup_form popup_form_v1 popup_form_v1_mod_1 color_white_3">
+      <div class="form_title">Заявка принята</div>
+      <div class="form_msg">Мы скоро вам перезвоним</div>
+      <div class="text_center"><a href="#" class="btn_v2 agent_btn blue_btn_bdr_v2"><span>Закрыть</span></a></div>
+    </div>
+  </div>
+
+    <div class="aside_menu_holder">
+      <a href="#" class="aside_close_btn openAsideMenu"></a>
+      <div class="aside_menu_inner">
+        <ul id="navigation" class="aside_menu">
+          <li><a data-index="1" href="#1" class="aside_m_link">Аккаунт </a></li>
+          <li><a data-index="2" href="#2" class="aside_m_link">Тарифы</a></li>
+          <li><a data-index="3" href="#3" class="aside_m_link">Преимущества</a></li>
+          <li><a data-index="4" href="#4" class="aside_m_link">Резерв</a></li>
+          <li><a data-index="6" href="#6" class="aside_m_link">Депозиты</a></li>
+          <li><a data-index="8" href="#8" class="aside_m_link">Новости</a></li>
+          <li><a data-index="9" href="#9" class="aside_m_link">Контакты</a></li>
+        </ul>
+        <div class="aside_info">
+          <div class="aside_company"> <span class="clr_green">UNIASTRUM </span><span>BANK</span></div>
+          <dl class="aside_address">
+            <dt>МОСКВА</dt>
+            <dd>
+              80 Franklin Street, Suite 1  <br>
+              New York, NY 10013, USA  <br> <b>8 800 333 04 04</b>
+            </dd>
+            <dt>САНКТ-ПЕТЕРБУРГ</dt>
+            <dd>
+              80 Franklin Street, Suite 1  <br>
+              New York, NY 10013, USA  <br> <b>8 800 333 04 04</b>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div id="agent_form" style="display:none;" class="popup_form popup_form_v1 popup_form_v1_mod_1 color_white_3">
+      <form action="#" class="validateMe">
+        <div class="form_title">Заполните анкету, чтобы стать агентом банка «Юниаструм»</div>
+        <div class="text_center">
+          <label class="radio_toggler radio_toggler_v1">
+            <input type="checkbox" autofocus="autofocus" class="hidden_inp agentEntity"/><span class="radio_text_on"><span class="radio_text"><span>Юридическое лицо</span></span></span><span class="radio_text_off"><span class="radio_text"><span>Индивидуальный предприниматель</span></span></span>
+          </label>
+        </div>
+        <div class="form_row f_cell_v2">
+          <div class="form_col">
+            <div class="form_cell">
+              <label for="agent_org_form" class="f_label_v2">ФОРМА ОГРАНИЗАЦИИ</label>
+              <div class="f_input_v3">
+                <input id="agent_org_form" class="validate[required]"/>
+              </div>
+            </div>
+            <div class="form_cell">
+              <label for="agent_org_name" class="f_label_v2">НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ</label>
+              <div class="f_input_v3">
+                <input id="agent_org_name" class="validate[required]"/>
+              </div>
+            </div>
+            <div class="form_cell">
+              <label for="agent_org_inn" class="f_label_v2">ИНН</label>
+              <div class="f_input_v3">
+                <input id="agent_org_inn" data-inputmask="'mask': '9999999999'" class="maskMe validate[required,custom[inn10]]"/>
+              </div>
+            </div>
+            <div class="form_cell">
+              <label for="agent_org_addr" class="f_label_v2">ФАКТИЧЕСКИЙ АДРЕС МЕСТОНАХОЖДЕНИЯ</label>
+              <div class="f_input_v3">
+                <textarea id="agent_org_addr" class="validate[required]"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form_col">
+            <div class="form_cell">
+              <label for="agent_last_name" class="f_label_v2">ФАМИЛИЯ</label>
+              <div class="f_input_v3">
+                <input id="org_form" class="validate[required]"/>
+              </div>
+            </div>
+            <div class="form_cell">
+              <label for="agent_first_name" class="f_label_v2">ИМЯ </label>
+              <div class="f_input_v3">
+                <input id="agent_first_name" class="validate[required]"/>
+              </div>
+            </div>
+            <div class="form_cell">
+              <label for="agent_fathers_name" class="f_label_v2">ОТЧЕСТВО</label>
+              <div class="f_input_v3">
+                <input id="agent_fathers_name" class="validate[required]"/>
+              </div>
+            </div>
+            <div class="form_cell">
+              <label for="agent_phone" class="f_label_v2">МОБИЛЬНЫЙ ТЕЛЕФОН ДЛЯ ПОЛУЧЕНИЯ КОДА </label>
+              <div class="f_input_v3">
+                <input id="agent_phone" data-inputmask="'mask': '[+7] (999)-999-99-99'" class="maskMe validate[required]"/>
+              </div>
+            </div>
+            <div class="form_cell">
+              <label for="agent_email" class="f_label_v2">EMAIL</label>
+              <div class="f_input_v3">
+                <input id="agent_email" data-inputmask="'alias': 'email'" class="maskMe validate[required,custom[email]]"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text_center">
+          <button class="btn_v2 green_btn agent_btn"><span>Получить гарантию</span></button>
+        </div>
+      </form>
+    </div>
+
+    <div class="header header_light">
+      <div class="top_menu">
+        <div class="fr auth_block">
+          <div class="mb"><a href="#" class="btn_v1 login_btn authFormOpen blue_btn_bdr blue_btn_bdr_v3">Вход</a></div>
+        </div>
+        <div class="fl">
+          <div class="mb">
+            <div class="main_m_control">
+              <div class="main_m_btn openAsideMenu"></div>
+            </div>
+          </div>
+        </div>
+        <div class="section_inner clearfix">
+          <div class="fl">
+            <div class="mb">
+              <div class="land_switcher landSwitcher"><img src="svg/account/black.svg" class="logo_dark"/><img src="svg/account/white.svg" class="logo_white"/>
+              </div>
+            </div>
+            <div class="mb">
+              <div class="callback_block clr_white">
+                <div class="callback_phone">8 800 333 04 04</div>
+                <p><span>Звоните или </span><a href="#" class="gl_link callbakc_link openCallBackForm clr_white">закажите звонок</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="land_menu_holder landMenu">
+        <div class="section_inner"><a href="#" class="land_close_btn landSwitcher"></a>
+          <ul class="land_menu">
+            <li class="land_m_item current"><a href="#" class="menu_link">
+                <div class="land_abbr abbr_blue">GR</div>
+                <div class="land_name">UNIGARANT</div>
+                <p>Банковская гарантия <br> онлайн</p></a></li>
+            <li class="land_m_item"><a href="#" class="menu_link">
+                <div class="land_abbr abbr_green">LS</div>
+                <div class="land_name">UNICOMPANY</div>
+                <p>Счет для вашего бизнеса <br> ИП, ООО, ПАО</p></a></li>
+            <li class="land_m_item"><a href="#" class="menu_link">
+                <div class="land_abbr abbr_blue_2">FT</div>
+                <div class="land_name">UNIGARANT</div>
+                <p>Банковская гарантия <br> онлайн</p></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="base">
+        <div class="main_content">
+          <!--  Аккаунт-->
+          <section class="page1">
+          <div class="section pd-top-150 section_bg20 sectionBS"><img src="i/account/section_1.jpg" class="imgBS hide">
+            <div class="section_inner">
+              <h3 class="section_title"><span class="clr_blue_2">Uniaccount </span><span class="clr_white">
+                   —&nbsp;быстрый старт
+                  вашего счета для бизнеса</span></h3>
+              <ul class="service_benefits clr_white">
+                <li>
+                  <div class="benefit_item">
+                    <h3>1</h3>
+                    <p>Зарезервировать <span class="dt_only"> <br> </span>счет на сайте</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="benefit_item">
+                    <h3>2</h3>
+                    <p>Принести документы <span class="dt_only"> <br> </span>в отделение</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="benefit_item">
+                    <h3>3</h3>
+                    <p>Подписать <span class="dt_only"> <br> </span>договор</p>
+                  </div>
+                </li>
+              </ul>
+              <div data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;" class="order_form">
+                <form action="#">
+                  <div class="form_row f_cell_v1">
+                    <div class="form_cell">
+                      <div class="f_input_v1">
+                        <input placeholder="Имя">
+                      </div>
+                    </div>
+                    <div class="form_cell">
+                      <div class="f_input_v1">
+                        <input placeholder="Телефон или email">
+                      </div>
+                    </div>
+                    <div class="form_cell">
+                      <button class="btn_v2 get_guarantee_btn blue_btn_v2"><span>Зарезервировать счет</span></button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="u_holder">
+              <div class="u_field">
+                <div class="uBlock u_block">
+                  <svg width="1445px" height="730px" viewBox="0 0 1445 730">
+                    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.2">
+                        <path d="M499.671875,717 L720.375,717 L490.394531,12.4101562 L230.628906,12.4101562 L0.6484375,717 L211.585938,717 L248.207031,576.863281 L463.050781,576.863281 L499.671875,717 Z M353.675781,175.007812 L357.582031,175.007812 L425.453125,430.867188 L285.804688,430.867188 L353.675781,175.007812 Z M1116.37109,729.207031 C1306.3125,729.207031 1443.51953,608.601562 1444.49609,432.820312 L1246.25391,432.820312 C1239.90625,514.363281 1188.14844,566.609375 1116.85938,566.609375 C1030.92188,566.609375 977.699219,491.414062 977.699219,363.972656 C977.699219,237.996094 1031.41016,162.800781 1116.37109,162.800781 C1188.14844,162.800781 1240.39453,216.023438 1245.27734,296.101562 L1443.51953,296.101562 C1443.03125,121.296875 1302.40625,0.203125 1116.37109,0.203125 C901.039062,0.203125 766.761719,132.039062 766.761719,364.460938 C766.761719,596.882812 900.550781,729.207031 1116.37109,729.207031 L1116.37109,729.207031 Z" id="AC" fill="#C5EBF1"></path>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+          <!--  тарифы -->
+        <section class="page2">
+          <div class="section section_bg7 clr_black sectionBS"><img src="i/account/section_2.jpg" class="imgBS hide">
+            <div class="section_inner">
+              <h3 data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;" class="section_title text_center">Тарифы</h3>
+              <ul class="tarif_list">
+                <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data--30p-top="transform: translate(0%,-10%); opacity: 0;">
+                  <label class="tarif_unit">
+                    <input type="radio" name="tarif" class="hidden_inp">
+                    <div class="tarif_inner clr_gray">
+                      <div class="tarif_caption">Начальный</div>
+                      <dl class="tarif_options">
+                        <dt>100</dt>
+                        <dd>Количество безналичных платежей, в месяц</dd>
+                        <dt>100,000 руб.</dt>
+                        <dd>Внесение наличных на счет, в месяц</dd>
+                        <dt>100 руб.</dt>
+                        <dd>Справка</dd>
+                        <dt class="clr_blue_2">1,699 руб.</dt>
+                        <dd>За год  <br> или  1,999 руб. — в месяц</dd>
+                      </dl>
+                    </div>
+                    <div class="tarif_footer"></div>
+                  </label>
+                </li>
+                <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-75p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data--30p-top="transform: translate(0%,-10%); opacity: 0;">
+                  <label class="tarif_unit">
+                    <input type="radio" name="tarif" class="hidden_inp">
+                    <div class="tarif_inner clr_gray">
+                      <div class="tarif_caption active">Выгодный</div>
+                      <dl class="tarif_options">
+                        <dt>1,000</dt>
+                        <dd>Количество безналичных платежей, в месяц</dd>
+                        <dt>100,000,000 руб.</dt>
+                        <dd>Внесение наличных на счет, в месяц</dd>
+                        <dt>50 руб.</dt>
+                        <dd>Справка</dd>
+                        <dt class="clr_blue_2">2,699 руб.</dt>
+                        <dd>За год  <br> или  1,999 руб. — в месяц</dd>
+                      </dl>
+                    </div>
+                    <div class="tarif_footer"></div>
+                  </label>
+                </li>
+                <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-80p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data--30p-top="transform: translate(0%,-10%); opacity: 0;">
+                  <label class="tarif_unit">
+                    <input type="radio" name="tarif" class="hidden_inp">
+                    <div class="tarif_inner clr_gray">
+                      <div class="tarif_caption">Уникальный </div>
+                      <dl class="tarif_options">
+                        <dt>1,200</dt>
+                        <dd>Количество безналичных платежей, в месяц</dd>
+                        <dt>300,000,000 руб.</dt>
+                        <dd>Внесение наличных на счет, в месяц</dd>
+                        <dt>Бесплатно</dt>
+                        <dd>Справка</dd>
+                        <dt class="clr_blue_2">3,699 руб.</dt>
+                        <dd>За год  <br> или  1,999 руб. — в месяц</dd>
+                      </dl>
+                    </div>
+                    <div class="tarif_footer"></div>
+                  </label>
+                </li>
+              </ul>
+              <div class="text_center">
+                <div data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;" class="order_form inline_mod">
+                  <form action="#">
+                    <div class="form_row f_cell_v1">
+                      <div class="form_cell">
+                        <div class="f_input_v1">
+                          <input placeholder="Имя">
+                        </div>
+                      </div>
+                      <div class="form_cell">
+                        <div class="f_input_v1">
+                          <input placeholder="Телефон или email">
+                        </div>
+                      </div> <br>
+                      <div class="form_cell">
+                        <button class="btn_v2 get_guarantee_btn blue_btn_v2"><span>Зарезервировать счет</span></button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+          <!-- Преимущества-->
+        <section class="page3">
+          <div class="section pd-top-150 section_bg14_1 clr_gray">
+            <div class="section_inner">
+              <h3 data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;" class="section_title">Преимущества</h3>
+              <ul class="company_features company_features_v3">
+                <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                  <div class="feature_item">
+                    <div class="feature_icon">
+                      <svg width="68px" height="56px" viewBox="0 0 68 56">
+                        <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="design" transform="translate(-151.000000, -2409.000000)" stroke="#2618FF">
+                                <g id="noun_103184_cc" transform="translate(152.000000, 2410.000000)">
+                                    <path d="M2,0 C0.9,0 0,0.9 0,2 L0,46 C0,47.1 0.9,48 2,48 L64,48 C65.1,48 66,47.1 66,46 L66,2 C66,0.9 65.1,0 64,0 L2,0 L2,0 Z" id="Shape"></path>
+                                    <path d="M7,44 C5.3,44 4,42.7 4,41 L4,7 C4,5.3 5.3,4 7,4 L59,4 C60.7,4 62,5.3 62,7 L62,13 L62,36 L62,41 C62,42.7 60.7,44 59,44 L7,44 Z" id="Shape"></path>
+                                    <path d="M24,35 C17.9,35 13,30.1 13,24 C13,17.9 17.9,13 24,13 C30.1,13 35,17.9 35,24 C35,30.1 30.1,35 24,35 L24,35 Z" id="Shape"></path>
+                                    <path d="M24,29 C21.2,29 19,26.8 19,24 C19,21.2 21.2,19 24,19 C26.8,19 29,21.2 29,24 C29,26.8 26.8,29 24,29 L24,29 Z" id="Shape"></path>
+                                    <rect id="Rectangle-path" x="14" y="23" width="3" height="2"></rect>
+                                    <rect id="Rectangle-path" x="31" y="23" width="3" height="2"></rect>
+                                    <rect id="Rectangle-path" x="23" y="14" width="2" height="3"></rect>
+                                    <rect id="Rectangle-path" x="23" y="31" width="2" height="3"></rect>
+                                    <rect id="Rectangle-path" transform="translate(17.989600, 18.004000) rotate(45.000000) translate(-17.989600, -18.004000) " x="16.4896144" y="17.0040096" width="2.99997123" height="1.99998082"></rect>
+                                    <rect id="Rectangle-path" transform="translate(30.010500, 29.995100) rotate(45.000000) translate(-30.010500, -29.995100) " x="28.5105144" y="28.9951096" width="2.99997123" height="1.99998082"></rect>
+                                    <rect id="Rectangle-path" transform="translate(29.995600, 17.989000) rotate(45.000000) translate(-29.995600, -17.989000) " x="28.9956096" y="16.4890144" width="1.99998082" height="2.99997123"></rect>
+                                    <rect id="Rectangle-path" transform="translate(18.004500, 30.010000) rotate(45.000000) translate(-18.004500, -30.010000) " x="17.0045096" y="28.5100144" width="1.99998082" height="2.99997123"></rect>
+                                    <path d="M10,54 C7.8,54 6,52.2 6,50 L6,48 L14,48 L14,50 C14,52.2 12.2,54 10,54 L10,54 Z" id="Shape"></path>
+                                    <path d="M56,54 C53.8,54 52,52.2 52,50 L52,48 L60,48 L60,50 C60,52.2 58.2,54 56,54 L56,54 Z" id="Shape"></path>
+                                </g>
+                            </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="feature_caption">Надежность банка</div>
+                    <p>Нам уже доверяют  более 18 тысяч клиентов – компаний и 200 тысяч частных  клиентов</p>
+                  </div>
+                </li>
+                <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-73p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                  <div class="feature_item">
+                    <div class="feature_icon">
+                      <svg width="68px" height="64px" viewBox="0 0 68 64">
+                        <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="design" transform="translate(-430.000000, -2401.000000)" stroke="#2618FF">
+                                <polygon id="Star-1" points="464 2453.5 443.427516 2464.31559 447.356511 2441.4078 430.713022 2425.18441 453.713758 2421.8422 464 2401 474.286242 2421.8422 497.286978 2425.18441 480.643489 2441.4078 484.572484 2464.31559"></polygon>
+                            </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="feature_caption">Топ 30 банков</div>
+                    <p>За I квартал 2016 года прибыль банка составлила 524 млн. руб. </p>
+                  </div>
+                </li>
+                <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-76p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                  <div class="feature_item">
+                    <div class="feature_icon">
+                      <svg width="75px" height="65px" viewBox="0 0 75 65">
+                        <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="design" transform="translate(-709.000000, -2403.000000)" stroke="#2618FF">
+                                <polyline id="Path-102" points="709.746094 2467.12109 723.804688 2433.78516 737.875 2455.88281 750.597656 2417.76562 765.835938 2437.65625 783.160156 2403"></polyline>
+                            </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="feature_caption">Стабильность</div>
+                    <p>Достаточность капитала на 40% выше требуемой                                                              </p>
+                  </div>
+                </li>
+                <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-81p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                  <div class="feature_item">
+                    <div class="feature_icon">
+                      <svg width="93px" height="57px" viewBox="0 0 93 57">
+                        <defs>
+                            <polygon id="path-1" points="0 57 93 57 93 0 0 0"></polygon>
+                        </defs>
+                        <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="design" transform="translate(-982.000000, -2410.000000)">
+                                <g id="Page-1" transform="translate(982.000000, 2410.000000)">
+                                    <path d="M84.5,56.5 L8.5,56.5 C4.082,56.5 0.5,52.918 0.5,48.5 L0.5,8.5 C0.5,4.082 4.082,0.5 8.5,0.5 L84.5,0.5 C88.918,0.5 92.5,4.082 92.5,8.5 L92.5,48.5 C92.5,52.918 88.918,56.5 84.5,56.5 L84.5,56.5 Z" id="Stroke-1" stroke="#2618FF" stroke-linecap="round"></path>
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <g id="Clip-4"></g>
+                                    <polygon id="Stroke-3" stroke="#2618FF" stroke-linecap="round" mask="url(#mask-2)" points="0.5 26.5 92.5 26.5 92.5 13.5 0.5 13.5"></polygon>
+                                    <path d="M11.5,42 L38.5,42" id="Stroke-5" stroke="#2618FF" stroke-linecap="round" mask="url(#mask-2)"></path>
+                                    <path d="M1.5,26.5 L15,13" id="Stroke-6" stroke="#2618FF" stroke-linecap="round" mask="url(#mask-2)"></path>
+                                    <path d="M11.5,26.5 L25,13" id="Stroke-7" stroke="#2618FF" stroke-linecap="round" mask="url(#mask-2)"></path>
+                                    <path d="M21.5,26.5 L35,13" id="Stroke-8" stroke="#2618FF" stroke-linecap="round" mask="url(#mask-2)"></path>
+                                    <path d="M31.5,26.5 L45,13" id="Stroke-9" stroke="#2618FF" stroke-linecap="round" mask="url(#mask-2)"></path>
+                                    <path d="M41.5,26.5 L55,13" id="Stroke-10" stroke="#2618FF" stroke-linecap="round" mask="url(#mask-2)"></path>
+                                    <path d="M51.5,26.5 L65,13" id="Stroke-11" stroke="#2618FF" stroke-linecap="round" mask="url(#mask-2)"></path>
+                                    <path d="M61.5,26.5 L75,13" id="Stroke-12" stroke="#2618FF" stroke-linecap="round" mask="url(#mask-2)"></path>
+                                    <path d="M71.5,26.5 L85,13" id="Stroke-13" stroke="#2618FF" stroke-linecap="round" mask="url(#mask-2)"></path>
+                                    <path d="M81.5,26.5 L92.5,15.5" id="Stroke-14" stroke="#2618FF" stroke-linecap="round" mask="url(#mask-2)"></path>
+                                </g>
+                            </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="feature_caption">Карты</div>
+                    <p>Корпоративные карты – простота и удобство</p>
+                  </div>
+                </li>
+                <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                  <div class="feature_item">
+                    <div class="feature_icon">
+                      <svg width="73px" height="65px" viewBox="0 0 73 65">
+                        <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                            <g id="design" transform="translate(-149.000000, -2722.000000)" stroke="#2618FF">
+                                <g id="13" transform="translate(150.000000, 2723.000000)">
+                                    <path d="M65.5978261,50.0078829 L65.5978261,57.0322732 C65.5978261,60.4804683 62.8334565,63.2761756 59.423913,63.2761756 L6.17391304,63.2761756 C2.76436957,63.2761756 0,60.4804683 0,57.0322732 L0,19.5688585 C0,16.1206634 2.76436957,13.3249561 6.17391304,13.3249561 L59.423913,13.3249561 C62.8334565,13.3249561 65.5978261,16.1206634 65.5978261,19.5688585 L65.5978261,25.0322732" id="Stroke-1"></path>
+                                    <path d="M6.17391304,13.3249561 L49.0664022,0.297053659 C53.0478043,-0.980604878 57.1086957,2.02427317 57.1086957,6.24827317 L57.1086957,7.08105366" id="Stroke-3"></path>
+                                    <path d="M71,43.7639805 L62.5108696,43.7639805 C59.1013261,43.7639805 56.3369565,40.9682732 56.3369565,37.520078 L56.3369565,37.520078 C56.3369565,34.0718829 59.1013261,31.2761756 62.5108696,31.2761756 L71,31.2761756 L71,43.7639805 L71,43.7639805 Z" id="Stroke-5"></path>
+                                </g>
+                            </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="feature_caption">Депозиты</div>
+                    <p>Депозиты от 1 дня по привлекательным ставкам</p>
+                  </div>
+                </li>
+                <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-73p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                  <div class="feature_item">
+                    <div class="feature_icon">
+                      <svg width="59px" height="66px" viewBox="0 0 59 66">
+                        <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="design" transform="translate(-428.000000, -2723.000000)" stroke="#2618FF">
+                                <g id="noun_129168_cc" transform="translate(429.000000, 2724.000000)">
+                                    <path d="M35.5555556,64 L3.55555556,64 C1.59525926,64 0,62.4047407 0,60.4444444 L0,3.55555556 C0,1.59525926 1.59525926,0 3.55555556,0 L35.5555556,0 C37.5158519,0 39.1111111,1.59525926 39.1111111,3.55555556 L39.1111111,60.4444444 C39.1111111,62.4047407 37.5158519,64 35.5555556,64 L35.5555556,64 Z" id="Shape"></path>
+                                    <polygon id="Shape" points="34.3703704 35.5555556 4.74074074 35.5555556 4.74074074 4.74074074 34.3703704 4.74074074"></polygon>
+                                    <polygon id="Shape" points="56.9072593 56.8888889 42.7407407 56.8888889 42.7407407 5.92592593 56.9072593 5.92592593"></polygon>
+                                    <rect id="Rectangle-path" x="47.4814815" y="8.2962963" width="2.37037037" height="46.2222222"></rect>
+                                    <polygon id="Shape" points="13.037037 46.2222222 4.74074074 46.2222222 4.74074074 37.9259259 13.037037 37.9259259"></polygon>
+                                    <polygon id="Shape" points="23.7037037 46.2222222 15.4074074 46.2222222 15.4074074 37.9259259 23.7037037 37.9259259"></polygon>
+                                    <polygon id="Shape" points="26.0740741 46.2222222 26.0740741 37.9259259 34.3703704 37.9259259 34.3703704 46.2222222"></polygon>
+                                    <polygon id="Shape" points="13.037037 56.8888889 4.74074074 56.8888889 4.74074074 48.5925926 13.037037 48.5925926"></polygon>
+                                    <polygon id="Shape" points="23.7037037 56.8888889 15.4074074 56.8888889 15.4074074 48.5925926 23.7037037 48.5925926"></polygon>
+                                    <polygon id="Shape" points="34.3703704 56.8888889 26.0740741 56.8888889 26.0740741 48.5925926 34.3703704 48.5925926"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="feature_caption">Эквайринг</div>
+                    <p>Эквайринг – прием карт всех платежных систем</p>
+                  </div>
+                </li>
+                <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-76p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                  <div class="feature_item">
+                    <div class="feature_icon">
+                      <svg width="63px" height="64px" viewBox="0 0 63 64">
+                        <defs>
+                            <path d="M753.810028,2784.6832 L777.732797,2728.38166 C779.056853,2725.26751 775.814787,2722.03218 772.666227,2723.27096 L717.486766,2745.02287 C714.307537,2746.27362 714.116783,2750.83974 717.260854,2752.17502 L741.16567,2762.33284 L746.368386,2784.09748 C747.19349,2787.70459 752.363291,2788.08835 753.810028,2784.6832 L753.810028,2784.6832 Z" id="path-1"></path>
+                            <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="63.0368139" height="64.0324799" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                        </defs>
+                        <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="design" transform="translate(-715.000000, -2723.000000)" stroke="#2618FF" stroke-width="2">
+                                <use id="12" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="feature_caption">Онлайн сервисы</div>
+                    <p>Создаем удобные и быстрые сервисы для работы с банком через интернет.</p>
+                  </div>
+                </li>
+                <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-79p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                  <div class="feature_item">
+                    <div class="feature_icon">
+                      <svg width="57px" height="66px" viewBox="0 0 57 66">
+                        <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="design" transform="translate(-983.000000, -2723.000000)" stroke="#2618FF">
+                                <g id="14" transform="translate(983.000000, 2723.000000)">
+                                    <path d="M0.558823529,54.8135593 L0.558823529,28.5254237 C0.558823529,13.0803051 13.0686471,0.559322034 28.5,0.559322034 L28.5,0.559322034 C43.9313529,0.559322034 56.4411765,13.0803051 56.4411765,28.5254237 L56.4411765,54.8135593" id="Stroke-1"></path>
+                                    <path d="M56.4411765,54.2542373 L51.9705882,54.2542373 C49.5017059,54.2542373 47.5,52.2507458 47.5,49.779661 L47.5,40.8305085 C47.5,38.3594237 49.5017059,36.3559322 51.9705882,36.3559322 L56.4411765,36.3559322 L56.4411765,54.2542373 L56.4411765,54.2542373 Z" id="Stroke-3"></path>
+                                    <path d="M5.02941176,54.2542373 L0.558823529,54.2542373 L0.558823529,36.3559322 L5.02941176,36.3559322 C7.49829412,36.3559322 9.5,38.3594237 9.5,40.8305085 L9.5,49.779661 C9.5,52.2507458 7.49829412,54.2542373 5.02941176,54.2542373 L5.02941176,54.2542373 Z" id="Stroke-5"></path>
+                                    <path d="M56.4411765,54.8135593 L56.4411765,54.8135593 C56.4411765,59.4469831 52.6881176,63.2033898 48.0588235,63.2033898 L38,63.2033898" id="Stroke-7"></path>
+                                    <path d="M35.2058824,65.440678 L29.6176471,65.440678 C28.3826471,65.440678 27.3823529,64.4394915 27.3823529,63.2033898 L27.3823529,63.2033898 C27.3823529,61.9672881 28.3826471,60.9661017 29.6176471,60.9661017 L35.2058824,60.9661017 C36.4408824,60.9661017 37.4411765,61.9672881 37.4411765,63.2033898 L37.4411765,63.2033898 C37.4411765,64.4394915 36.4408824,65.440678 35.2058824,65.440678 L35.2058824,65.440678 Z" id="Stroke-9"></path>
+                                </g>
+                            </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="feature_caption">Поддержка 24/7</div>
+                    <p>Решаем вопросы быстро, доступны всегда по телефону 8&nbsp;800&nbsp;333&nbsp;04&nbsp;04</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+          <!-- Резерв-->
+        <section class="page4">
+          <div class="section section_bg3 clr_white sectionBS"><img src="i/account/section_3.jpg" class="imgBS hide">
+            <div class="section_inner">
+              <h3 data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;" class="section_title">Зарезервируйте  <span class="dt_only"> <br>  </span>счет онлайн</h3>
+              <div class="article_v4 clr_white">
+                <p data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">ПАО КБ «Восточный» объявляет о завершении процедуры приема заявок акции в рамках дополнительной эмиссии. В ходе открытой подписки были удовлетворены заявки на полную сумму эмиссии — 3 млрд рублей. Банк получил заявки от восьми инвесторов, спрос на его акции вдвое превысил предложение.</p>
+                <p data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">В дополнительной эмиссии принимает участие компания Эвизон, контролируемая фондами Baring Vostok (основной акционер «Восточного»), а также «Юниаструм Банк», доля которого в капитале банка в результате может составить чуть менее 25%. Окончательное распределение акций будет понятно после подведения итогов эмиссии и регистрации Отчета Банком России.</p>
+              </div>
+              <div data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;" class="order_form">
+                <form action="#">
+                  <div class="form_row f_cell_v1">
+                    <div class="form_cell">
+                      <div class="f_input_v1">
+                        <input placeholder="Имя">
+                      </div>
+                    </div>
+                    <div class="form_cell">
+                      <div class="f_input_v1">
+                        <input placeholder="Телефон или email">
+                      </div>
+                    </div>
+                    <div class="form_cell">
+                      <button class="btn_v2 get_guarantee_btn blue_btn_v2"><span>Зарезервировать счет</span></button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="page5">
+          <div class="section pd-top-180 section_bg21 clr_gray">
+            <div class="section_inner">
+              <div class="review_item">
+                <p data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">Стать агентом банка это один из наиболее эффективных и надежных способов обеспечения исполнения обязательств, обеспечение заявки на участие в конкурсе, обеспечение исполнения контракта.</p>
+              </div>
+              <div data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;" class="author_item">
+                <div class="author_photo"><img src="i/factor/author_1.png"></div>
+                <div class="author_name">Альберто Жиллардино</div>
+                <div class="author_post">CEO Вимм Билль Данн</div>
+              </div>
+            </div>
+          </div>
+        </section>
+          <!-- Депозиты-->
+        <section class="page6">
+          <div class="section section_bg22 clr_gray dt_only">
+            <div class="section_inner">
+              <h3 data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;" class="section_title">Депозиты для  <br>  юридических лиц</h3>
+              <div class="deposite_table_w">
+                <table class="deposite_table clr_gray">
+                  <thead>
+                    <tr data-100p-top="transform: translate(0%,50%); opacity: 0;" data-90p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                      <th class="col_1">&nbsp;</th>
+                      <th class="col_2"> <span>Стабильный  <br>  доход</span></th>
+                      <th class="col_3"> <span>Активный  <br>  капитал</span></th>
+                      <th class="col_4"><span>Деловой  <br>  подход</span></th>
+                      <th class="col_5"><span>Максимальный  <br>  доход</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-100p-top="transform: translate(0%,50%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                      <td class="col_1"><span>Валюта</span></td>
+                      <td colspan="4" class="col_2">
+                        <div class="edged_caption"><span class="icon-before icon-rub"></span></div>
+                      </td>
+                    </tr>
+                    <tr data-100p-top="transform: translate(0%,50%); opacity: 0;" data-90p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                      <td class="col_1"><span>Минимальная сумма</span></td>
+                      <td class="col_2"><span>100,000 руб.</span></td>
+                      <td class="col_3"><span>300,000 руб.</span></td>
+                      <td class="col_4"><span>50,000 руб.</span></td>
+                      <td class="col_5"><span>50,000 руб.</span></td>
+                    </tr>
+                    <tr data-100p-top="transform: translate(0%,50%); opacity: 0;" data-90p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                      <td class="col_1"><span>Срок</span></td>
+                      <td class="col_2"><span>От 1 дня  <br> до 1 года</span></td>
+                      <td colspan="3" class="col_3">
+                        <div class="edged_caption"><span>1 год</span></div>
+                      </td>
+                    </tr>
+                    <tr data-100p-top="transform: translate(0%,50%); opacity: 0;" data-90p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                      <td class="col_1"><span>Выплата процентов</span></td>
+                      <td class="col_2"><span>В конце  <br>  срока</span></td>
+                      <td colspan="3" class="col_3"><span>Ежемесячно и в конце срока</span></td>
+                    </tr>
+                  </table>
+                </section>
+
+                <section class="page7">
+                  <div class="section section_bg22 clr_gray dt_only">
+                    <div class="section_inner">
+                      <table class="deposite_table clr_gray">
+                        <tr data-100p-top="transform: translate(0%,50%); opacity: 0;" data-90p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                          <td class="col_1"><span>Пополнение</span></td>
+                          <td class="col_2"><span class="icon-before icon-wrong deposite_option"></span></td>
+                          <td class="col_3"><span class="icon-before icon-ok deposite_option"></span></td>
+                          <td class="col_4"><span class="icon-before icon-wrong deposite_option"></span></td>
+                          <td class="col_5"><span class="icon-before icon-wrong deposite_option"></span></td>
+                        </tr>
+                        <tr data-100p-top="transform: translate(0%,50%); opacity: 0;" data-90p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                          <td class="col_1"><span>Частичное изъятие</span></td>
+                          <td class="col_2"><span class="icon-before icon-wrong deposite_option"></span></td>
+                          <td class="col_3"><span class="icon-before icon-ok deposite_option"></span></td>
+                          <td class="col_4"><span class="icon-before icon-ok deposite_option"></span></td>
+                          <td class="col_5"><span class="icon-before icon-wrong deposite_option"></span></td>
+                        </tr>
+                        <tr data-100p-top="transform: translate(0%,50%); opacity: 0;" data-90p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                          <td class="col_1"><span>Полное изъятие</span></td>
+                          <td class="col_2"><span class="icon-before icon-wrong deposite_option"></span></td>
+                          <td class="col_3"><span class="icon-before icon-ok deposite_option"></span></td>
+                          <td class="col_4"><span class="icon-before icon-wrong deposite_option"></span></td>
+                          <td class="col_5"><span class="icon-before icon-wrong deposite_option"></span></td>
+                        </tr>
+                        <tr data-100p-top="transform: translate(0%,50%); opacity: 0;" data-90p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">
+                          <td class="col_1"><span>Неснижаемый остаток</span></td>
+                          <td class="col_2"><span class="icon-before icon-wrong deposite_option"></span></td>
+                          <td class="col_3"><span class="icon-before icon-wrong deposite_option"></span></td>
+                          <td class="col_4"><span class="icon-before icon-ok deposite_option"></span></td>
+                          <td class="col_5"><span class="icon-before icon-wrong deposite_option"></span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  <div class="order_form">
+                    <form action="#">
+                      <div class="form_row f_cell_v1 input_bdr_mod">
+                        <div class="form_cell">
+                          <div class="f_input_v1">
+                            <input placeholder="Имя">
+                          </div>
+                        </div>
+                        <div class="form_cell">
+                          <div class="f_input_v1">
+                            <input placeholder="Телефон или email">
+                          </div>
+                        </div>
+                        <div class="form_cell">
+                          <button class="btn_v2 get_guarantee_btn blue_btn_v2"><span>Зарезервировать счет</span></button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <section class="page8">
+          <div class="section pd-top-180 section_bg21 clr_gray">
+            <div class="section_inner">
+              <div class="review_item">
+                <p data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;">Стать агентом банка это один из наиболее эффективных и надежных способов обеспечения исполнения обязательств, обеспечение заявки на участие в конкурсе, обеспечение исполнения контракта.</p>
+              </div>
+              <div data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;" class="author_item">
+                <div class="author_photo"><img src="i/factor/author_1.png"></div>
+                <div class="author_name">Альберто Жиллардино</div>
+                <div class="author_post">CEO Вимм Билль Данн</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="page9">
+          <div class="section section_bg19 clr_black_2">
+            <div class="section_inner">
+              <div class="news_block">
+                <h3 data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;" class="section_title">Новости</h3>
+                <ul class="news_list">
+                  <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;">
+                    <div class="news_unit"><a href="#" class="news_img openNewsPopup"><img src="i/factor/news_1.jpg"></a>
+                      <div class="news_inner"><a href="#" class="clr_black_3 gl_link openNewsPopup">«Юниаструм Банк» вошел в топ-30 по прибыли по итогам 1 квартала 2016 года</a></div>
+                    </div>
+                  </li>
+                  <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-73p-top="transform: translate(0%,0%); opacity: 1;">
+                    <div class="news_unit"><a href="#" class="news_img openNewsPopup"><img src="i/factor/news_1.jpg"></a>
+                      <div class="news_inner"><a href="#" class="clr_black_3 gl_link openNewsPopup">«Юниаструм Банк» вошел в топ-30 по прибыли по итогам 1 квартала 2016 года</a></div>
+                    </div>
+                  </li>
+                  <li data-100p-top="transform: translate(0%,200%); opacity: 0;" data-76p-top="transform: translate(0%,0%); opacity: 1;">
+                    <div class="news_unit"><a href="#" class="news_img openNewsPopup"><img src="i/factor/news_1.jpg"></a>
+                      <div class="news_inner"><a href="#" class="clr_black_3 gl_link openNewsPopup">«Юниаструм Банк» вошел в топ-30 по прибыли по итогам 1 квартала 2016 года</a></div>
+                    </div>
+                  </li>
+                </ul>
+                <div data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" class="more_news"><a href="#" class="gl_link">Больше новостей</a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page10">
+          <div class="section pd-top-160-60 section_bg8 sectionBS"><img src="i/account/section_4.jpg" class="imgBS hide">
+            <div class="section_inner">
+              <h3 data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;" class="section_title text_center clr_gray">Зарезервируйте счет</h3>
+              <div class="text_center">
+                <div data-100p-top="transform: translate(0%,200%); opacity: 0;" data-70p-top="transform: translate(0%,0%); opacity: 1;" data-10p-top="transform: translate(0%,0%); opacity: 1;" data-0-top="transform: translate(0%,-30%); opacity: 0;" class="order_form center_mod">
+                  <form action="#">
+                    <div class="form_row f_cell_v1">
+                      <div class="form_cell">
+                        <div class="f_input_v1">
+                          <input placeholder="Имя">
+                        </div>
+                      </div>
+                      <div class="form_cell">
+                        <div class="f_input_v1">
+                          <input placeholder="Телефон или email">
+                        </div>
+                      </div>
+                      <div class="form_cell">
+                        <button class="btn_v2 get_guarantee_btn green_btn"><span>Зарезервировать счет</span></button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer">
+            <div class="section_inner">
+              <div class="footer_row">
+                <div class="fl">
+                  <div class="callback_block clr_white">
+                    <div class="callback_phone">8 800 333 04 04</div>
+                    <p><span>Звоните или </span><a href="#" class="gl_link callbakc_link clr_white openCallBackForm">закажите звонок</a></p>
+                  </div>
+                </div>
+                <div class="fr">
+                  <div class="footer_menu">
+                    <li><a href="#" class="gl_link">О продукте</a></li>
+                    <li><a href="#" class="gl_link">Калькулятор</a></li>
+                    <li><a href="#" class="gl_link openCallBackCompleteForm">Отзывы</a></li>
+                    <li><a href="#" class="gl_link restoreCompliteFormOpen">Оформление</a></li>
+                    <li><a href="#" class="gl_link restoreFormOpen">Контакты</a></li>
+                  </div>
+                </div>
+              </div>
+              <div class="footer_row">
+                <div class="footer_box">
+                  <p class="clr_gray_4">Есть вопросы?</p>
+                  <p> <a href="mailto:hello@unitender.com" class="gl_link clr_white">hello@unitender.com</a></p>
+                </div>
+                <div class="footer_box">
+                  <p class="clr_gray_4">Приходите в гости</p>
+                  <p class="clr_white">Московская обл., 8-ой км Рублево-Успенского шоссе,  <br> Одинцовский р-н, д. Барвиха, д. 114</p>
+                </div>
+                <ul class="footer_soc">
+                  <li><a href="#" class="soc_link icon-fb"></a></li>
+                  <li><a href="#" class="soc_link icon-tw"></a></li>
+                  <li><a href="#" class="soc_link icon-gp"></a></li>
+                  <li><a href="#" class="soc_link icon-vk"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </section>
+      </div>
+    </div>
+
+    <div class="dialog_viewport ui-widget-overlay">
+      <div id="news_form" style="display:none;" class="popup_form popup_form_v1 popup_form_v1_mod_1 color_white_3">
+        <div class="news_popup">
+          <div class="news_img"><img src="i/factor/photo@2x.png" width="940" height="300" class="retina_only"/><img src="i/factor/photo.png" width="940" height="300" class="no_retina"/>
+            <div class="news_title">
+              <div class="news_date">26 мая 2016</div>
+              <div class="news_name"> <span>«Юниаструм Банк» вошел  </span><span class="dt_only"> <br>  </span><span>в топ-30 по прибыли по итогам 1 квартала 2016 года</span></div>
+            </div>
+          </div>
+          <div class="article_v3">
+            <p>25 мая 2016 состоялась торжественная церемония вручения премии «Банковское дело», лауреатом которой в номинации «За личный вклад в развитие банковского дела» стала Алла Цытович, председатель правления «Юниаструм Банка».</p>
+            <p>Основная цель международной премии «Банковское дело», которая проводится в Москве 12й раз,  - отметить лучших представителей региональных и федеральных банков за личные заслуги, весомый вклад в развитие финансового сектора и укрепление экономической стабильности России. Традиционно наряду с номинантами в церемонии принимали участие ведущие экономисты, финансисты, представители органов государственной власти РФ.</p>
+            <p>Наряду с награждением банков в рамках специальной премии «Женщина – банкир года» отмечаются заслуги лучших представительниц финансовой сферы. За личный вклад в развитие банковского дела  изящная «Банковская корона» была вручена Алле Цытович.</p>
+            <p> </p>
+            <div class="more_news"><a href="#" class="gl_link">Больше новостей</a></div>
+          </div>
+        </div>
+      </div>
+
+  </body>
+</html>
