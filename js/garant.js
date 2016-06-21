@@ -8,7 +8,7 @@ $(function ($) {
 
 
     noUiSlider.create(order_sum_toddler, {
-        start: [40000000],
+        start: [5000],
         range: {
             'min': [5000],
             '1%': [20000000],
@@ -26,7 +26,7 @@ $(function ($) {
     });
 
     noUiSlider.create(order_period_toddler, {
-        start: [10],
+        start: [1],
         range: {
             'min': [5000],
             '1%': [1],
@@ -117,9 +117,9 @@ function updateInput(inp, val) {
 
     if (val < minValue) {
         if (jQuery(inp).is('#order_sum')) {
-            inp.value = newVal + " (Меньше минимальной суммы!)";
+            inp.value = newVal + " рублей";
         } else if (jQuery(inp).is('#order_period')){
-            inp.value = newVal + " (меньше минимального срока!)";
+            inp.value = newVal + "";
         }
     } else {
         inp.value = newVal + ' ' + plurArr[plurInd];

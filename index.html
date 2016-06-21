@@ -44,6 +44,7 @@
     <!--script(src='js/jquery.inputmask.regex.extensions.js')-->
     <!--script(src='js/jquery.inputmask.extensions.js')-->
     <script src="js/plax.js"></script>
+    <script src="js/wNumb.js"></script>
     <script src="js/jquery.nav.js"></script>
     <script src="js/jquery.scrollTo.js"></script>
     <script src="js/jquery.validationEngine.js"></script>
@@ -73,7 +74,7 @@
           <dl class="aside_address">
             <dt>МОСКВА</dt>
             <dd>
-              Москва, Суворовская пл., 1<br>
+              127473, Суворовская пл., 1<br>
               8 800 333 04 04
             </dd>
           </dl>
@@ -155,7 +156,7 @@
                 <li>
                   <div class="benefit_item">
                     <h3>Онлайн</h3>
-                    <p>Подписание документов с помощью электронно-цифровой подписи</p>
+                    <p>Подписание документов с помощью электронной подписи</p>
                   </div>
                 </li>
               </ul>
@@ -201,7 +202,7 @@
                 <form action="#">
                   <div class="calc_block">
                     <div class="form_row f_cell_v1">
-                      <label for="order_sum" class="f_label_v1">СУММА (Минимальная сумма — 20 000 000 рублей!)</label>
+                      <label for="order_sum" class="f_label_v1">СУММА</label>
                       <div class="f_input_v2">
                         <input id="order_sum" value="20 000 000 рублей" data-plural="рубль,рубля,рублей" data-inputmask_="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign' : false, 'suffix': ' qwerty', 'postfix': 'asdfgh' " class="digitsOnly maskMePostfix_">
                       </div>
@@ -210,7 +211,7 @@
                       </div>
                     </div>
                     <div class="form_row f_cell_v1">
-                      <label for="order_period" class="f_label_v1">СРОК (Минимальный срок — 1 месяц)</label>
+                      <label for="order_period" class="f_label_v1">СРОК</label>
                       <div class="f_input_v2">
                         <input id="order_period" value="10 месяцев" data-plural="месяц,месяца,месяцев" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign' : false, 'suffix': ' qwerty' " class="digitsOnly maskMePostfix_" placeholder="Месяц">
                       </div>
@@ -506,7 +507,7 @@
           <img src="i/garant/section_3.jpg" class="imgBS hide">
             <div class="section_inner">
               <div class="create_agent_block mr-top115">
-                <h3 class="section_title">Интересно сотрудничество в&nbsp;качестве агента? Заполните анкету или позвоните нам</h3>
+                <h3 class="section_title">Интересно сотрудничество в&nbsp;качестве агента? Заполните анкету или позвоните нам<br/>8 800 333-04-04</h3>
                 <div class="create_agent_controls"><a href="#" class="btn_v2 blue_btn agent_btn agentFormOpen"><span>Стать агентом</span></a></div>
               </div>
             </div>
@@ -515,7 +516,7 @@
           <!-- Опыт клиентов-->
         <section class="page7">
           <div class="section section_bg21 pd-top-160 clr_gray">
-            <div class="section_inner">
+            <div class="section_inner mr-top115">
               <div class="review_item">
                 <p class="skrollable skrollable-between">Стать агентом банка это один из наиболее эффективных и надежных способов обеспечения исполнения обязательств, обеспечение заявки на участие в конкурсе, обеспечение исполнения контракта</p>
               </div>
@@ -684,7 +685,7 @@
     </div>
     <div id="callback_complete_form" style="display:none;" class="popup_form popup_form_v1 popup_form_v1_mod_1 color_white_3">
       <div class="form_title">Заявка принята</div>
-      <div class="form_msg">Мы скоро вам перезвоним</div>
+      <div class="form_msg">Спасибо! Мы скоро с вами свяжемся.</div>
       <div class="text_center"><a href="#" class="btn_v2 agent_btn blue_btn_bdr_v2 close"><span>Закрыть</span></a></div>
     </div>
     <div id="callback_no_user" style="display:none;" class="popup_form popup_form_v1 popup_form_v1_mod_1 color_white_3">
@@ -704,14 +705,14 @@
         </div>
         <div class="form_row f_cell_v2">
           <div class="form_col">
-            <div class="form_cell">
+            <div class="form_cell" style="display:none;">
               <label for="agent_org_form" class="f_label_v2">ФОРМА ОГРАНИЗАЦИИ</label>
               <div class="f_input_v3">
                 <input name="org_form" id="agent_org_form" class="validate[required]">
               </div>
             </div>
-            <div class="form_cell">
-              <label for="agent_org_name" class="f_label_v2">НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ</label>
+            <div class="form_cell" style="display:none;">
+              <label for="agent_org_name" class="f_label_v2" style="display:none;">НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ</label>
               <div class="f_input_v3">
                 <input name="org_name" id="agent_org_name" class="validate[required]">
               </div>
@@ -722,7 +723,19 @@
                 <input name="iin" id="agent_org_inn" data-inputmask="'mask': '9999999999'" class="maskMe validate[required,custom[inn10]]"/>
               </div>
             </div>
+                        <div class="form_cell">
+              <label for="agent_phone" class="f_label_v2">МОБИЛЬНЫЙ ТЕЛЕФОН ДЛЯ ПОЛУЧЕНИЯ КОДА </label>
+              <div class="f_input_v3">
+                <input name="mobile" id="agent_phone" data-inputmask="'mask': '[+7] (999)-999-99-99'" class="maskMe validate[required]"/>
+              </div>
+            </div>
             <div class="form_cell">
+              <label for="agent_email" class="f_label_v2">EMAIL</label>
+              <div class="f_input_v3">
+                <input name="email" id="agent_email" data-inputmask="'alias': 'email'" class="maskMe validate[required,custom[email]]"/>
+              </div>
+            </div>
+            <div class="form_cell" style="display:none;">
               <label for="agent_org_addr" class="f_label_v2">ФАКТИЧЕСКИЙ АДРЕС МЕСТОНАХОЖДЕНИЯ</label>
               <div class="f_input_v3">
                 <textarea name="address" id="agent_org_addr" class="validate[required]"></textarea>
@@ -748,22 +761,10 @@
                 <input name="name3" id="agent_fathers_name" class="validate[required]">
               </div>
             </div>
-            <div class="form_cell">
-              <label for="agent_phone" class="f_label_v2">МОБИЛЬНЫЙ ТЕЛЕФОН ДЛЯ ПОЛУЧЕНИЯ КОДА </label>
-              <div class="f_input_v3">
-                <input name="mobile" id="agent_phone" data-inputmask="'mask': '[+7] (999)-999-99-99'" class="maskMe validate[required]"/>
-              </div>
-            </div>
-            <div class="form_cell">
-              <label for="agent_email" class="f_label_v2">EMAIL</label>
-              <div class="f_input_v3">
-                <input name="email" id="agent_email" data-inputmask="'alias': 'email'" class="maskMe validate[required,custom[email]]"/>
-              </div>
-            </div>
           </div>
         </div>
         <div class="text_center">
-          <button class="btn_v2 green_btn agent_btn"><span>Получить гарантию</span></button>
+          <button class="btn_v2 green_btn agent_btn"><span>Отправить заявку</span></button>
         </div>
       </form>
 
