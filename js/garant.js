@@ -20,8 +20,7 @@ $(function ($) {
         //order_sum.value = plural(Math.round(values[handle]), 'рубль', 'рубля', 'рублей');
 
         //order_sum.value = Math.round(values[handle]);
-        
-        updateInput(order_sum, Math.round(values[handle]));
+        updateInput(order_sum, Math.floor(values[handle]));
 
     });
 
@@ -110,10 +109,12 @@ function getMinValue(inp) {
 }
 
 function updateInput(inp, val) {
-
     var plurInd = pluralN(val), newVal = numFormat(val), plurArr = inp.dataset.plural.split(','), minValue = getMinValue(inp);
 
     //console.log(plurArr[plurInd].length);
+
+    var old_selection_start = inp.selectionStart;
+    var old_selection_end = inp.selectionEnd;
 
     if (val < minValue) {
         if (jQuery(inp).is('#order_sum')) {
@@ -129,16 +130,27 @@ function updateInput(inp, val) {
 
     //inp.value = plural(Math.round(val), str1, str2, str3);
 
-    inp.selectionStart = newVal.length;
-    inp.selectionEnd = newVal.length;
+    inp.selectionStart = old_selection_start;
+    inp.selectionEnd = old_selection_end;
 }
 
 function updateToddler(inp, tdlr) {
 
-    var e = 'keyup,focus,blur,change'.split(',');
+    var e = 'keyup,change'.split(',');
     for (var i in e) $(inp).on(e[i], function (e) {
+        if (e.type == "keyup") {
+            if (e.keyCode == 37) {
+                inp.selectionStart = inp.selectionStart-1;
+                inp.selectionEnd = inp.selectionStart;
+                return true;
+            } else if (e.keyCode == 39) {
+                inp.selectionStart = inp.selectionStart+1;
+                inp.selectionEnd = inp.selectionStart;
+                return true;
+            }
+        }
         if ((inp.value).replace(/\D/ig, ''))
-            tdlr.noUiSlider.set([(inp.value).replace(/\D/ig, '')]);
+            tdlr.noUiSlider.set([parseInt((inp.value).replace(/\D/ig, ''))]);
         else
             inp.value = "";
     });

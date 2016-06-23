@@ -407,22 +407,23 @@
       $(document).keydown(function(e) {
         var tag = e.target.tagName.toLowerCase();
 
+
         if (!$("body").hasClass("disabled-onepage-scroll")) {
           switch(e.which) {
             case 38:
-              if (tag != 'input' && tag != 'textarea') el.moveUp()
+              el.moveUp()
             break;
             case 40:
-              if (tag != 'input' && tag != 'textarea') el.moveDown()
+              el.moveDown()
             break;
             case 32: //spacebar
-              if (tag != 'input' && tag != 'textarea') el.moveDown()
+              el.moveDown()
             break;
             case 33: //pageg up
-              if (tag != 'input' && tag != 'textarea') el.moveUp()
+              el.moveUp()
             break;
             case 34: //page dwn
-              if (tag != 'input' && tag != 'textarea') el.moveDown()
+              el.moveDown()
             break;
             case 36: //home
               el.moveTo(1);
