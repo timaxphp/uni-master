@@ -60,7 +60,7 @@
         <div class="form_row f_cell_v3">
           <div class="form_cell">
             <div class="f_input_v4">
-              <input id="agent_org_form" data-inputmask="'alias': 'email'" placeholder="EMAIL" class="maskMe validate[required,custom[email],funcCall[alertError]]"/>
+              <input id="agent_org_form" type="email" placeholder="EMAIL">
               <script>
                 function alertError(field, rules, i, options){
                   return "Такой emai не существует";
@@ -201,6 +201,7 @@
                 <input id="org_form" class="validate[required]"/>
               </div>
             </div>
+            <!--
             <div class="form_cell">
               <label for="agent_first_name" class="f_label_v2">ИМЯ </label>
               <div class="f_input_v3">
@@ -213,6 +214,7 @@
                 <input id="agent_fathers_name" class="validate[required]"/>
               </div>
             </div>
+            -->
             <div class="form_cell">
               <label for="agent_phone" class="f_label_v2">МОБИЛЬНЫЙ ТЕЛЕФОН ДЛЯ ПОЛУЧЕНИЯ КОДА </label>
               <div class="f_input_v3">
@@ -840,13 +842,13 @@
                   </div>
                 </div>
                 <div class="fr">
-                  <div class="footer_menu">
+                  <ul class="footer_menu">
                     <li><a href="#" class="gl_link">О продукте</a></li>
                     <li><a href="#" class="gl_link">Калькулятор</a></li>
                     <li><a href="#" class="gl_link openCallBackCompleteForm">Отзывы</a></li>
                     <li><a href="#" class="gl_link restoreCompliteFormOpen">Оформление</a></li>
                     <li><a href="#" class="gl_link restoreFormOpen">Контакты</a></li>
-                  </div>
+                  </ul>
                 </div>
               </div>
               <div class="footer_row">
