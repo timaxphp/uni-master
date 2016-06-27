@@ -27,7 +27,7 @@ $(function ($) {
     noUiSlider.create(order_period_toddler, {
         start: [1],
         range: {
-            'min': [5000],
+            'min': [1],
             '1%': [1],
             'max': [24]
         }
@@ -74,27 +74,6 @@ $(function ($) {
                     slidesToShow: 1
                 }
             }]
-    });
-
-    var agentOrgINN = $('#agent_org_inn');
-
-    $('.agentEntity').on ('change', function () {
-        var firedEl = $(this);
-
-        if (firedEl.prop('checked')) {
-            agentOrgINN
-                .attr('data-inputmask', '"mask": "9", "repeat": "12"')
-                .attr('class', agentOrgINN.attr('class').replace(/custom\[inn10\]/ig, 'custom[inn12]'));
-        } else {
-            agentOrgINN
-                .attr('data-inputmask', '"mask": "9", "repeat": "10"')
-                .attr('class', agentOrgINN.attr('class').replace(/custom\[inn12\]/ig, 'custom[inn10]'));
-        }
-
-        agentOrgINN.inputmask();
-
-        if (agentOrgINN.val()) agentOrgINN.validationEngine('validate');
-
     });
 
     all_dialog_close();
