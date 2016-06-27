@@ -775,7 +775,7 @@
           <div class="form_row f_cell_v3">
             <div class="form_cell">
               <div class="f_input_v4">
-                <input id="agent_org_form" data-inputmask="'alias': 'email'" placeholder="EMAIL" class="maskMe validate[required,custom[email],funcCall[alertError]]"/>
+                <input id="agent_org_form" placeholder="EMAIL">
                 <script>
                   function alertError(field, rules, i, options){
                     return "Такой emai не существует";
@@ -801,7 +801,7 @@
           <div class="form_row f_cell_v3">
             <div class="form_cell">
               <div class="f_input_v4">
-                <input id="agent_org_form" data-inputmask="'alias': 'email'" placeholder="EMAIL" class="maskMe validate[required,custom[email]]"/>
+                <input id="agent_org_form" placeholder="EMAIL">
               </div>
             </div>
           </div>
@@ -833,84 +833,90 @@
           </div>
         </form>
       </div>
+
       <div id="callback_complete_form" style="display:none;" class="popup_form popup_form_v1 popup_form_v1_mod_1 color_white_3">
         <div class="form_title">Заявка принята</div>
         <div class="form_msg">Мы скоро вам перезвоним</div>
         <div class="text_center"><a href="#" class="btn_v2 agent_btn blue_btn_bdr_v2"><span>Закрыть</span></a></div>
       </div>
+
       <div id="agent_form" style="display:none;" class="popup_form popup_form_v1 popup_form_v1_mod_1 color_white_3">
-        <form action="#" class="validateMe">
-          <div class="form_title">Заполните анкету, чтобы стать агентом банка «Юниаструм»</div>
-          <div class="text_center">
-            <label class="radio_toggler radio_toggler_v1">
-              <input type="checkbox" autofocus="autofocus" class="hidden_inp agentEntity"/><span class="radio_text_on"><span class="radio_text"><span>Юридическое лицо</span></span></span><span class="radio_text_off"><span class="radio_text"><span>Индивидуальный предприниматель</span></span></span>
-            </label>
-          </div>
-          <div class="form_row f_cell_v2">
-            <div class="form_col">
-              <div class="form_cell">
-                <label for="agent_org_form" class="f_label_v2">ФОРМА ОГРАНИЗАЦИИ</label>
-                <div class="f_input_v3">
-                  <input id="agent_org_form" class="validate[required]"/>
-                </div>
-              </div>
-              <div class="form_cell">
-                <label for="agent_org_name" class="f_label_v2">НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ</label>
-                <div class="f_input_v3">
-                  <input id="agent_org_name" class="validate[required]"/>
-                </div>
-              </div>
-              <div class="form_cell">
-                <label for="agent_org_inn" class="f_label_v2">ИНН</label>
-                <div class="f_input_v3">
-                  <input id="agent_org_inn" data-inputmask="'mask': '9999999999'" class="maskMe validate[required,custom[inn10]]"/>
-                </div>
-              </div>
-              <div class="form_cell">
-                <label for="agent_org_addr" class="f_label_v2">ФАКТИЧЕСКИЙ АДРЕС МЕСТОНАХОЖДЕНИЯ</label>
-                <div class="f_input_v3">
-                  <textarea id="agent_org_addr" class="validate[required]"></textarea>
-                </div>
+      <form action="#" class="validateMe">
+        <div class="form_title">Заполните анкету, чтобы стать агентом банка «Юниаструм»</div>
+        <div class="text_center">
+          <label class="radio_toggler radio_toggler_v1">
+            <input type="checkbox" autofocus="autofocus" class="hidden_inp agentEntity"/><span class="radio_text_on"><span class="radio_text"><span>Юридическое лицо</span></span></span><span class="radio_text_off"><span class="radio_text"><span>Индивидуальный предприниматель</span></span></span>
+          </label>
+        </div>
+        <div class="form_row f_cell_v2">
+          <div class="form_col">
+            <!--
+            <div class="form_cell" style="display:none;">
+              <label for="agent_org_form" class="f_label_v2">ФОРМА ОГРАНИЗАЦИИ</label>
+              <div class="f_input_v3">
+                <input name="org_form" id="agent_org_form" class="validate[required]">
               </div>
             </div>
-            <div class="form_col">
-              <div class="form_cell">
-                <label for="agent_last_name" class="f_label_v2">ФАМИЛИЯ</label>
-                <div class="f_input_v3">
-                  <input id="org_form" class="validate[required]"/>
-                </div>
+            <div class="form_cell" style="display:none;">
+              <label for="agent_org_name" class="f_label_v2" style="display:none;">НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ</label>
+              <div class="f_input_v3">
+                <input name="org_name" id="agent_org_name" class="validate[required]">
               </div>
-              <div class="form_cell">
-                <label for="agent_first_name" class="f_label_v2">ИМЯ </label>
-                <div class="f_input_v3">
-                  <input id="agent_first_name" class="validate[required]"/>
-                </div>
+            </div>
+            -->
+            <div class="form_cell">
+              <label for="agent_org_inn" class="f_label_v2">ИНН</label>
+              <div class="f_input_v3">
+                <input name="iin" id="agent_org_inn" data-inputmask="'mask': '9999999999'" class="maskMe validate[required,custom[inn10]]"/>
               </div>
-              <div class="form_cell">
-                <label for="agent_fathers_name" class="f_label_v2">ОТЧЕСТВО</label>
-                <div class="f_input_v3">
-                  <input id="agent_fathers_name" class="validate[required]"/>
-                </div>
+            </div>
+            <div class="form_cell">
+              <label for="agent_phone" class="f_label_v2">ТЕЛЕФОН</label>
+              <div class="f_input_v3">
+                <input name="mobile" id="agent_phone" data-inputmask="'mask': '[+7] (999)-999-99-99'" class="maskMe validate[required]"/>
               </div>
-              <div class="form_cell">
-                <label for="agent_phone" class="f_label_v2">МОБИЛЬНЫЙ ТЕЛЕФОН ДЛЯ ПОЛУЧЕНИЯ КОДА </label>
-                <div class="f_input_v3">
-                  <input id="agent_phone" data-inputmask="'mask': '[+7] (999)-999-99-99'" class="maskMe validate[required]"/>
-                </div>
-              </div>
-              <div class="form_cell">
-                <label for="agent_email" class="f_label_v2">EMAIL</label>
-                <div class="f_input_v3">
-                  <input id="agent_email" data-inputmask="'alias': 'email'" class="maskMe validate[required,custom[email]]"/>
-                </div>
+            </div>
+            <div class="form_cell" style="display:none;">
+              <label for="agent_org_addr" class="f_label_v2">ФАКТИЧЕСКИЙ АДРЕС МЕСТОНАХОЖДЕНИЯ</label>
+              <div class="f_input_v3">
+                <textarea name="address" id="agent_org_addr" class="validate[required]"></textarea>
               </div>
             </div>
           </div>
-          <div class="text_center">
-            <button class="btn_v2 green_btn agent_btn"><span>Получить гарантию</span></button>
+          <div class="form_col">
+            <div class="form_cell">
+              <label for="agent_last_name" class="f_label_v2">ФИО</label>
+              <div class="f_input_v3">
+                <input name="name1" id="org_form" class="validate[required]">
+              </div>
+            </div>
+            <div class="form_cell">
+              <label for="agent_email" class="f_label_v2">EMAIL</label>
+              <div class="f_input_v3">
+                <input name="email" id="agent_email" placeholder="email">
+              </div>
+            </div>
+            <!--
+            <div class="form_cell">
+              <label for="agent_first_name" class="f_label_v2">ИМЯ </label>
+              <div class="f_input_v3">
+                <input name="name2" id="agent_first_name" class="validate[required]">
+              </div>
+            </div>
+            <div class="form_cell">
+              <label for="agent_fathers_name" class="f_label_v2">ОТЧЕСТВО</label>
+              <div class="f_input_v3">
+                <input name="name3" id="agent_fathers_name" class="validate[required]">
+              </div>
+            </div>
+            -->
           </div>
-        </form>
-      </div>
+        </div>
+        <div class="text_center">
+          <button class="btn_v2 green_btn agent_btn"><span>Отправить заявку</span></button>
+        </div>
+      </form>
+    </div>
     </div>
   </body>
 </html>
