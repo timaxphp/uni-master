@@ -27,7 +27,8 @@
     afterMove: null,
     loop: true,
     responsiveFallback: false,
-    direction : 'vertical'
+    direction : 'vertical',
+    onResponsiveChange: null
   };
 
   /*------------------------------------------------*/
@@ -83,7 +84,7 @@
   $.fn.onepage_scroll = function(options){
     var settings = $.extend({}, defaults, options),
         el = $(this),
-        sections = $(settings.sectionContainer)
+        sections = $(settings.sectionContainer),
         total = sections.length,
         status = "off",
         topPos = 0,
@@ -257,6 +258,9 @@
       var valForTest = $(this).isResponsiveFallback();
 
       //end modification
+      if (valForTest !== lastValForTest && settings.onResponsiveChange != null) {
+        settings.onResponsiveChange(valForTest);
+      }
       if (valForTest) {
         $("body").addClass("disabled-onepage-scroll");
         unbind_events();
@@ -268,6 +272,7 @@
         }
         bind_events();
       }
+      lastValForTest = valForTest;
     }
 
     function bind_events () {
@@ -437,6 +442,7 @@
 
       });
     }
+    var lastValForTest = $.fn.isResponsiveFallback();
     return false;
   }
 

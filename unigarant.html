@@ -44,6 +44,17 @@
     <!--script(src='js/jquery.inputmask.js')-->
     <!--script(src='js/jquery.inputmask.regex.extensions.js')-->
     <!--script(src='js/jquery.inputmask.extensions.js')-->
+    <script>
+      window.RESPONSIVE_EVENT = function (valForTest) {
+        if (valForTest) {
+          jQuery('#order_sum').attr('disabled', true);
+          jQuery('#order_period').attr('disabled', true);
+        } else {
+          jQuery('#order_sum').removeAttr('disabled');
+          jQuery('#order_period').removeAttr('disabled');
+        }
+      };
+    </script>
     <script src="js/plax.js"></script>
     <script src="js/wNumb.js"></script>
     <script src="js/jquery.nav.js"></script>

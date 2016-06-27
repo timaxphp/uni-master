@@ -15,7 +15,7 @@
     });
     var hash = window.location.hash;
     $("#navigation a[href='" + hash  + "']").parent().addClass('active');
-    $(".main_content").onepage_scroll({
+    var options = {
       sectionContainer: "section",
       animationTime: 800,
       responsiveFallback: window.RESPONSIVE_FALLBACK,
@@ -38,5 +38,9 @@
           $('.header_fixed').removeClass('header_fixed');
         }
       }
-    });
+    };
+    if (typeof window.RESPONSIVE_EVENT !== "undefined") {
+      options.onResponsiveChange = window.RESPONSIVE_EVENT;
+    }
+    $(".main_content").onepage_scroll(options);
 });
