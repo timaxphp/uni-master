@@ -6,15 +6,19 @@
             $.validationEngineLanguage.allRules = {
                 "required": { // Add your regex rules here, you can take telephone as an example
                     "regex": "none",
-                    "alertText": " Поле обязательно для заполнения",
+                    "alertText": " Заполните, пожалуйста",
                     "alertTextCheckboxMultiple": " Вы должны выбрать вариант",
-                    "alertTextCheckboxe": " Необходимо отметить"
+                    "alertTextCheckboxe": " Необходимо отметить",
                 },
                 "requiredInFunction": {
                     "func": function (field, rules, i, options) {
                         return (field.val() == "test") ? true : false;
                     },
                     "alertText": " Значением поля должно быть test"
+                },
+                "pleaseFill": {
+                    "regex": "none",
+                    "alertText": " Заполните, пожалуйста"
                 },
                 "minSize": {
                     "regex": "none",

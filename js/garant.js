@@ -8,9 +8,9 @@ $(function ($) {
 
 
     noUiSlider.create(order_sum_toddler, {
-        start: [5000],
+        start: [1],
         range: {
-            'min': [5000],
+            'min': [1],
             '1%': [20000000],
             'max': [200000000]
         }

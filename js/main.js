@@ -144,6 +144,7 @@ $(function ($) {
     $(".maskMe").inputmask();
 
     $(".maskMePostfix").inputmask();
+    
 
   // send email on submit form
     $("#callback_form form").submit(function(e) {
