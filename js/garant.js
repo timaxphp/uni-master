@@ -20,8 +20,8 @@ $(function ($) {
         //order_sum.value = plural(Math.round(values[handle]), 'рубль', 'рубля', 'рублей');
 
         //order_sum.value = Math.round(values[handle]);
-        updateInput(order_sum, Math.floor(values[handle]));
-
+        var value = updateInput(order_sum, Math.floor(values[handle]));
+        jQuery('.result-sum').html(value);
 
     });
 
@@ -35,7 +35,9 @@ $(function ($) {
     });
 
     order_period_toddler.noUiSlider.on('update', function (values, handle) {
-        updateInput(order_period, Math.round(values[handle]));
+        var value = updateInput(order_period, Math.round(values[handle]));
+
+        jQuery('.result-period').html(value);
 
         //order_period.value = Math.round(values[handle]);
 
@@ -112,6 +114,7 @@ function updateInput(inp, val) {
 
     inp.selectionStart = old_selection_start;
     inp.selectionEnd = old_selection_end;
+    return inp.value;
 }
 
 function updateToddler(inp, tdlr) {
