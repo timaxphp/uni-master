@@ -22,6 +22,7 @@ $(function ($) {
         //order_sum.value = Math.round(values[handle]);
         updateInput(order_sum, Math.floor(values[handle]));
 
+
     });
 
     noUiSlider.create(order_period_toddler, {
